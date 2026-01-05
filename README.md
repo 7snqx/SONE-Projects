@@ -70,17 +70,16 @@ Projekt wykorzystuje spójny system designu oparty na CSS Variables:
 ```
 
 ---
-
-## Kontakt
+## 📧 Kontakt
 
 **Szymon** - [@7snqx](https://github.com/7snqx)
 
-Link do projektu: [https://github.com/7snqx/S1Projects](https://github.com/7snqx/S1Projects)
+Link do projektu: [https://github.com/7snqx/S1Projects](https://github.com/7snqx/SONE-Projects)
 
 ---
 
 <div align="center">
 
-Made with ❤️ by [S1Projects](https://soneprojects.com)
+Made with ❤️ by [SONE](https://soneprojects.com)
 
 </div>
