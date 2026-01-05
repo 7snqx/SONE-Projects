@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![S1Projects Logo](assets/img/S1ProjectsLogo.png)
+![S1Projects Logo](assets/img/S1ProjectsLogoFavicon.png
 
 **Portfolio i kolekcja projektów webowych**
 
