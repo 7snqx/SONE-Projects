@@ -81,7 +81,7 @@ Ten projekt jest udostępniony na licencji MIT. Zobacz plik [LICENSE](LICENSE) p
 
 **Szymon** - [@7snqx](https://github.com/7snqx)
 
-Link do projektu: [https://github.com/7snqx/S1Projects](https://github.com/7snqx/S1Projects)
+Link do projektu: [https://github.com/7snqx/S1Projects](https://github.com/7snqx/SONE-Projects)
 
 ---
 
