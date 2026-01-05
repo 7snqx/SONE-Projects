@@ -40,7 +40,3 @@ soneque/
 ## ⚠️ Status
 
 Projekt w fazie mockupu - funkcjonalność koszyka niezaimplementowana.
-
-## 📄 Licencja
-
-MIT License

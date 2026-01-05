@@ -46,7 +46,3 @@ kalkulatorArgusow/
 ├── styleMobile.css     # Style mobilne
 └── assets/             # Zasoby graficzne
 ```
-
-## 📄 Licencja
-
-MIT License

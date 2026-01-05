@@ -1,28 +1,28 @@
-<?php 
+<?php
 session_start();
 // Database connection
 require_once '../../dbcon.php';
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usernameOrEmail = $_POST['username'];
-    $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $exampleUsernameOrEmail = $_POST['username'];
+    $examplePassword = $_POST['password'];
 
-    if(empty($usernameOrEmail) || empty($password)) {
+    if (empty($exampleUsernameOrEmail) || empty($examplePassword)) {
         $_SESSION['errorLogin'] = "Proszę wypełnić wszystkie pola.";
         $_SESSION['forceRegister'] = null;
         header("Location: ../../pages/account.php");
         exit();
     }
 
-    $prep = $conn->prepare("SELECT * FROM `accounts` WHERE LOWER(username) = LOWER(?) OR LOWER(email) = LOWER(?)");
-    $prep->bind_param("ss", $usernameOrEmail, $usernameOrEmail);
-    $prep->execute();
-    $result = $prep->get_result();
+    $exampleStatement = $exampleDbConnection->prepare("SELECT * FROM `example_accounts_table` WHERE LOWER(username) = LOWER(?) OR LOWER(email) = LOWER(?)");
+    $exampleStatement->bind_param("ss", $exampleUsernameOrEmail, $exampleUsernameOrEmail);
+    $exampleStatement->execute();
+    $exampleResult = $exampleStatement->get_result();
 
-    if($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        if(password_verify($password, $user['password'])) {
+    if ($exampleResult->num_rows > 0) {
+        $exampleUser = $exampleResult->fetch_assoc();
+        if (password_verify($examplePassword, $exampleUser['password'])) {
             $_SESSION['loggedin'] = true;
-            $_SESSION['userid'] = $user['id'];
+            $_SESSION['userid'] = $exampleUser['id'];
             $_SESSION['errorLogin'] = null;
             header("Location: ../../pages/account.php");
             exit();

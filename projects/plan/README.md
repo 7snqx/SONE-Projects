@@ -51,7 +51,3 @@ plan/
 ├── script.js           # Logika odliczania
 └── style.css           # Style
 ```
-
-## 📄 Licencja
-
-MIT License

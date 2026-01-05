@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 // Database connection
 require_once '../../dbcon.php';
@@ -10,88 +10,88 @@ require '../../assets/PHPMailer/src/SMTP.php';
 require '../../assets/PHPMailer/src/Exception.php';
 
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
-    if(empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $exampleUsername = $_POST['username'];
+    $exampleEmail = $_POST['email'];
+    $examplePassword = $_POST['password'];
+    $exampleConfirmPassword = $_POST['confirmPassword'];
+    if (empty($exampleUsername) || empty($exampleEmail) || empty($examplePassword) || empty($exampleConfirmPassword)) {
         $_SESSION['errorRegister'] = "Proszę wypełnić wszystkie pola.";
         $_SESSION['forceRegister'] = true;
         header("Location: ../../pages/account.php");
         exit();
     }
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($exampleEmail, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['errorRegister'] = "Nieprawidłowy format adresu email.";
         $_SESSION['forceRegister'] = true;
         header("Location: ../../pages/account.php");
         exit();
     }
 
-    $prep = $conn->prepare("SELECT * FROM `accounts` WHERE LOWER(username) = LOWER(?)");
-    $prep->bind_param("s", $username);
-    $prep->execute();
-    $result = $prep->get_result();
-    if($result->num_rows > 0) {
+    $exampleStatement = $exampleDbConnection->prepare("SELECT * FROM `example_accounts_table` WHERE LOWER(username) = LOWER(?)");
+    $exampleStatement->bind_param("s", $exampleUsername);
+    $exampleStatement->execute();
+    $exampleResult = $exampleStatement->get_result();
+    if ($exampleResult->num_rows > 0) {
         $_SESSION['errorRegister'] = "Nazwa użytkownika jest już zajęta.";
         $_SESSION['forceRegister'] = true;
         header("Location: ../../pages/account.php");
         exit();
     }
 
-    $prep = $conn->prepare("SELECT * FROM `accounts` WHERE LOWER(email) = LOWER(?)");
-    $prep->bind_param("s", $email);
-    $prep->execute();
-    $result = $prep->get_result();
-    if($result->num_rows > 0) {
+    $exampleStatement = $exampleDbConnection->prepare("SELECT * FROM `example_accounts_table` WHERE LOWER(email) = LOWER(?)");
+    $exampleStatement->bind_param("s", $exampleEmail);
+    $exampleStatement->execute();
+    $exampleResult = $exampleStatement->get_result();
+    if ($exampleResult->num_rows > 0) {
         $_SESSION['errorRegister'] = "Email jest już zajęty.";
         $_SESSION['forceRegister'] = true;
         header("Location: ../../pages/account.php");
         exit();
     }
 
-    if($password !== $confirmPassword) {
+    if ($examplePassword !== $exampleConfirmPassword) {
         $_SESSION['errorRegister'] = "Hasła nie są identyczne.";
         $_SESSION['forceRegister'] = true;
         header("Location: ../../pages/account.php");
         exit();
     }
 
-    $code = random_int(100000, 999999);
+    $exampleCode = random_int(100000, 999999);
 
-    $mail = new PHPMailer(true);
+    $exampleMailer = new PHPMailer(true);
 
-    $mail->CharSet = 'UTF-8';
-    $mail->Encoding = 'base64';
-    
+    $exampleMailer->CharSet = 'UTF-8';
+    $exampleMailer->Encoding = 'base64';
+
     // === SMTP CONFIGURATION ===
     // Copy mail_config.php.example to mail_config.php and fill in your credentials
     require_once __DIR__ . '/mail_config.php';
-    
-    $mail->isSMTP();
-    $mail->Host = SMTP_HOST;
-    $mail->SMTPAuth = true;
-    $mail->Username = SMTP_USERNAME;
-    $mail->Password = SMTP_PASSWORD;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = SMTP_PORT;
 
-    $mail->setFrom(MAIL_FROM, 'SONE Projects');
-    $mail->addAddress($email);
+    $exampleMailer->isSMTP();
+    $exampleMailer->Host = SMTP_HOST;
+    $exampleMailer->SMTPAuth = true;
+    $exampleMailer->Username = SMTP_USERNAME;
+    $exampleMailer->Password = SMTP_PASSWORD;
+    $exampleMailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $exampleMailer->Port = SMTP_PORT;
 
-    $mail->isHTML(false);
-    $mail->Subject = 'Kod potwierdzający';
-    $mail->Body = 'Twój kod: ' . $code;
+    $exampleMailer->setFrom(MAIL_FROM, 'SONE Projects');
+    $exampleMailer->addAddress($exampleEmail);
 
-    $mail->send();
+    $exampleMailer->isHTML(false);
+    $exampleMailer->Subject = 'Kod potwierdzający';
+    $exampleMailer->Body = 'Twój kod: ' . $exampleCode;
 
-    $_SESSION['verification_code'] = $code;
+    $exampleMailer->send();
 
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-    $prep = $conn->prepare("INSERT INTO `accounts` (username, email, password) VALUES (?, ?, ?)");
-    $prep->bind_param("sss", $username, $email, $hashedPassword);
-    $prep->execute();
+    $_SESSION['verification_code'] = $exampleCode;
+
+    $exampleHashedPassword = password_hash($examplePassword, PASSWORD_BCRYPT);
+    $exampleStatement = $exampleDbConnection->prepare("INSERT INTO `example_accounts_table` (username, email, password) VALUES (?, ?, ?)");
+    $exampleStatement->bind_param("sss", $exampleUsername, $exampleEmail, $exampleHashedPassword);
+    $exampleStatement->execute();
     $_SESSION['forceRegister'] = null;
     header("Location: ../../pages/account.php");
     exit();

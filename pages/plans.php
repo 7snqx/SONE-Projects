@@ -11,19 +11,19 @@ require_once '../dbcon.php';
         </h2>
         <div class="plansGrid">
             <?php
-            $sql = "SELECT * FROM `plans` WHERE completed = 0 ORDER BY `id` DESC";
-            $result = $conn->query($sql);
-            
-            if ($result->num_rows > 0) {
-                while ($plan = $result->fetch_assoc()) {
+            $exampleSql = "SELECT * FROM `example_plans_table` WHERE completed = 0 ORDER BY `id` DESC";
+            $exampleResult = $exampleDbConnection->query($exampleSql);
+
+            if ($exampleResult->num_rows > 0) {
+                while ($examplePlan = $exampleResult->fetch_assoc()) {
                     ?>
                     <article class="planCard">
                         <div class="planIcon">
-                            <span class="material-symbols-rounded"><?php echo htmlspecialchars($plan['icon']); ?></span>
+                            <span class="material-symbols-rounded"><?php echo htmlspecialchars($examplePlan['icon']); ?></span>
                         </div>
                         <div class="planContent">
-                            <h3 class="planTitle"><?php echo htmlspecialchars($plan['title']); ?></h3>
-                            <p class="planDescription"><?php echo htmlspecialchars($plan['description']); ?></p>
+                            <h3 class="planTitle"><?php echo htmlspecialchars($examplePlan['title']); ?></h3>
+                            <p class="planDescription"><?php echo htmlspecialchars($examplePlan['description']); ?></p>
                             <div class="planMeta">
                                 <span class="planStatus pending">
                                     <span class="material-symbols-rounded">hourglass_top</span>
@@ -54,26 +54,26 @@ require_once '../dbcon.php';
         </h2>
         <div class="plansGrid">
             <?php
-            $sql = "SELECT * FROM `plans` WHERE completed = 1 ORDER BY `completion_date` DESC";
-            $result = $conn->query($sql);
-            
-            if ($result->num_rows > 0) {
-                while ($plan = $result->fetch_assoc()) {
-                    $completedDate = $plan['completion_date'] ? $plan['completion_date'] : '';
+            $exampleSql = "SELECT * FROM `example_plans_table` WHERE completed = 1 ORDER BY `completion_date` DESC";
+            $exampleResult = $exampleDbConnection->query($exampleSql);
+
+            if ($exampleResult->num_rows > 0) {
+                while ($examplePlan = $exampleResult->fetch_assoc()) {
+                    $exampleCompletedDate = $examplePlan['completion_date'] ? $examplePlan['completion_date'] : '';
                     ?>
                     <article class="planCard completed">
                         <div class="planIcon">
                             <span class="material-symbols-rounded">task_alt</span>
                         </div>
                         <div class="planContent">
-                            <h3 class="planTitle"><?php echo htmlspecialchars($plan['title']); ?></h3>
-                            <p class="planDescription"><?php echo htmlspecialchars($plan['description']); ?></p>
+                            <h3 class="planTitle"><?php echo htmlspecialchars($examplePlan['title']); ?></h3>
+                            <p class="planDescription"><?php echo htmlspecialchars($examplePlan['description']); ?></p>
                             <div class="planMeta">
-                                <?php if ($completedDate): ?>
-                                <span class="planDate">
-                                    <span class="material-symbols-rounded">event_available</span>
-                                    <?php echo $completedDate; ?>
-                                </span>
+                                <?php if ($exampleCompletedDate): ?>
+                                    <span class="planDate">
+                                        <span class="material-symbols-rounded">event_available</span>
+                                        <?php echo $exampleCompletedDate; ?>
+                                    </span>
                                 <?php endif; ?>
                                 <span class="planStatus completed">
                                     <span class="material-symbols-rounded">check_circle</span>
@@ -97,5 +97,5 @@ require_once '../dbcon.php';
     </section>
 </div>
 <?php
-$conn->close();
+$exampleDbConnection->close();
 ?>

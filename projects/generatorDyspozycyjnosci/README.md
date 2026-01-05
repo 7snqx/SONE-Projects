@@ -2,8 +2,6 @@
 
 <div align="center">
 
-![Preview](assets/preview.png)
-
 **Narzędzie do generowania tygodniowego grafiku dostępności**
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](#)
@@ -49,7 +47,3 @@ generatorDyspozycyjnosci/
 ├── styleMobile.css     # Style mobilne
 └── assets/             # Zasoby (obrazy)
 ```
-
-## 📄 Licencja
-
-MIT License - możesz swobodnie używać i modyfikować.

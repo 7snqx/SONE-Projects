@@ -38,9 +38,3 @@ portal/
 ├── style.css           # Style
 └── assets/             # Obrazy
 ```
-
-## 📄 Licencja
-
-MIT License
-
-*Treści dotyczące Star Wars należą do Lucasfilm/Disney.*

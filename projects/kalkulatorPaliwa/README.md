@@ -56,7 +56,3 @@ kalkulatorPaliwa/
 ## ⚠️ Uwaga
 
 Scraper wymaga działającego serwera PHP z włączonym rozszerzeniem cURL.
-
-## 📄 Licencja
-
-MIT License

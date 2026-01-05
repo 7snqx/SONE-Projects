@@ -1,52 +1,52 @@
-<?php 
+<?php
 session_start();
 require_once '../dbcon.php';
 header('Content-Type: application/json; charset=utf-8');
 
-$search = htmlspecialchars($_GET['search'] ?? '');
-$badges = $_GET['badges'] ?? '';
-$sortBy = $_GET['sortBy'] ?? 'title';
-$sortOrder = $_GET['sortOrder'] ?? 'DESC';
+$exampleSearch = htmlspecialchars($_GET['search'] ?? '');
+$exampleBadges = $_GET['badges'] ?? '';
+$exampleSortBy = $_GET['sortBy'] ?? 'title';
+$exampleSortOrder = $_GET['sortOrder'] ?? 'DESC';
 
-$allowedSortBy = ['title', 'releaseDate', 'lastUpdate'];
-if (!in_array($sortBy, $allowedSortBy)) {
-    $sortBy = 'title';
+$exampleAllowedSortBy = ['title', 'releaseDate', 'lastUpdate'];
+if (!in_array($exampleSortBy, $exampleAllowedSortBy)) {
+    $exampleSortBy = 'title';
 }
 
 
-$allowedSortOrder = ['ASC', 'DESC'];
-if (!in_array(strtoupper($sortOrder), $allowedSortOrder)) {
-    $sortOrder = 'DESC';
+$exampleAllowedSortOrder = ['ASC', 'DESC'];
+if (!in_array(strtoupper($exampleSortOrder), $exampleAllowedSortOrder)) {
+    $exampleSortOrder = 'DESC';
 }
-$sortOrder = strtoupper($sortOrder);
+$exampleSortOrder = strtoupper($exampleSortOrder);
 
-$sql = "SELECT * FROM projects WHERE (title LIKE ? OR description LIKE ?)";
-$params = ['%' . $search . '%', '%' . $search . '%'];
-$types = 'ss';
+$exampleSql = "SELECT * FROM example_projects_table WHERE (title LIKE ? OR description LIKE ?)";
+$exampleParams = ['%' . $exampleSearch . '%', '%' . $exampleSearch . '%'];
+$exampleTypes = 'ss';
 
-if ($badges !== '') {
-    $badgeArray = explode(',', $badges);
-    foreach ($badgeArray as $badgeIndex) {
-        $badgeIndex = trim($badgeIndex);
-        $sql .= " AND (badge IS NOT NULL AND badge != '' AND FIND_IN_SET(?, badge) > 0)";
-        $params[] = $badgeIndex;
-        $types .= 's';
+if ($exampleBadges !== '') {
+    $exampleBadgeArray = explode(',', $exampleBadges);
+    foreach ($exampleBadgeArray as $exampleBadgeIndex) {
+        $exampleBadgeIndex = trim($exampleBadgeIndex);
+        $exampleSql .= " AND (badge IS NOT NULL AND badge != '' AND FIND_IN_SET(?, badge) > 0)";
+        $exampleParams[] = $exampleBadgeIndex;
+        $exampleTypes .= 's';
     }
 }
 
-$sql .= " ORDER BY $sortBy $sortOrder";
+$exampleSql .= " ORDER BY $exampleSortBy $exampleSortOrder";
 
-$prep = $conn->prepare($sql);
-$prep->bind_param($types, ...$params);
-$prep->execute();
-$result = $prep->get_result();
+$exampleStatement = $exampleDbConnection->prepare($exampleSql);
+$exampleStatement->bind_param($exampleTypes, ...$exampleParams);
+$exampleStatement->execute();
+$exampleResult = $exampleStatement->get_result();
 
-$projects = [];
-if ($result->num_rows > 0) {
-    $projects = $result->fetch_all(MYSQLI_ASSOC);
+$exampleProjects = [];
+if ($exampleResult->num_rows > 0) {
+    $exampleProjects = $exampleResult->fetch_all(MYSQLI_ASSOC);
 }
 
-echo json_encode(['success' => true, 'projects' => $projects]);
-$conn->close();
-    
+echo json_encode(['success' => true, 'projects' => $exampleProjects]);
+$exampleDbConnection->close();
+
 

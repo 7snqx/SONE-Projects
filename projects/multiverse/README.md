@@ -42,7 +42,3 @@ multiverse/
 ## 📱 Responsywność
 
 Strona zawiera responsywne menu hamburgerowe dla urządzeń mobilnych.
-
-## 📄 Licencja
-
-MIT License

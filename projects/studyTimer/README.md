@@ -48,7 +48,3 @@ studyTimer/
 ├── style.css           # Style z zmiennymi CSS
 └── assets/             # Dźwięki, ikony
 ```
-
-## 📄 Licencja
-
-MIT License
