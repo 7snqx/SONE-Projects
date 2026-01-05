@@ -1,5 +1,5 @@
 <?php
-require_once '../dbcon.php';
+require_once '../dbconn.php';
 session_start();
 
 header('Content-Type: application/json');
