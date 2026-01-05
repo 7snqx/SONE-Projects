@@ -1,11 +1,3 @@
-<?php
-/**
- * Database Connection Configuration
- * 
- * Copy this file to dbcon.php and fill in your database credentials.
- * NEVER commit dbcon.php to version control!
- */
-
 $servername = "your_database_host";
 $username = "your_database_username";
 $password = "your_database_password";
