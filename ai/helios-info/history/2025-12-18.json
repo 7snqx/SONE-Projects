@@ -1,0 +1,610 @@
+{
+    "date": "2025-12-18",
+    "dayType": "workday",
+    "dayOfWeek": 4,
+    "savedAt": "2025-12-18T22:00:02+01:00",
+    "totals": {
+        "occupied": 925,
+        "total": 8269,
+        "percent": 11.2,
+        "screenings": 47
+    },
+    "hourly": {
+        "10": {
+            "occupied": 492,
+            "total": 990,
+            "screenings": 5
+        },
+        "15": {
+            "occupied": 21,
+            "total": 592,
+            "screenings": 4
+        },
+        "20": {
+            "occupied": 49,
+            "total": 895,
+            "screenings": 6
+        },
+        "9": {
+            "occupied": 21,
+            "total": 149,
+            "screenings": 1
+        },
+        "11": {
+            "occupied": 29,
+            "total": 430,
+            "screenings": 3
+        },
+        "18": {
+            "occupied": 70,
+            "total": 935,
+            "screenings": 5
+        },
+        "13": {
+            "occupied": 56,
+            "total": 957,
+            "screenings": 5
+        },
+        "16": {
+            "occupied": 78,
+            "total": 793,
+            "screenings": 4
+        },
+        "17": {
+            "occupied": 42,
+            "total": 445,
+            "screenings": 3
+        },
+        "19": {
+            "occupied": 27,
+            "total": 167,
+            "screenings": 1
+        },
+        "21": {
+            "occupied": 27,
+            "total": 652,
+            "screenings": 3
+        },
+        "12": {
+            "occupied": 10,
+            "total": 961,
+            "screenings": 5
+        },
+        "14": {
+            "occupied": 3,
+            "total": 303,
+            "screenings": 2
+        }
+    },
+    "movies": [
+        {
+            "title": "Piernikowe serce",
+            "genres": [
+                "komedia romantyczna"
+            ],
+            "screenings": [
+                {
+                    "time": "10:00",
+                    "occupied": 314,
+                    "total": 371,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "10:00",
+                    "occupied": 29,
+                    "total": 141,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "15:45",
+                    "occupied": 4,
+                    "total": 149,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "20:40",
+                    "occupied": 6,
+                    "total": 149,
+                    "room": "Sala 6 - Gdynia"
+                }
+            ],
+            "totalOccupied": 353,
+            "totalSeats": 810
+        },
+        {
+            "title": "Opowieść świąteczna - KNT",
+            "genres": [
+                "familijny",
+                "dramat"
+            ],
+            "screenings": [
+                {
+                    "time": "10:00",
+                    "occupied": 56,
+                    "total": 160,
+                    "room": "Sala 1 - Wolność"
+                }
+            ],
+            "totalOccupied": 56,
+            "totalSeats": 160
+        },
+        {
+            "title": "Ministranci -  KNT",
+            "genres": [
+                "komediodramat"
+            ],
+            "screenings": [
+                {
+                    "time": "10:00",
+                    "occupied": 55,
+                    "total": 162,
+                    "room": "Sala 3 - Tatry"
+                }
+            ],
+            "totalOccupied": 55,
+            "totalSeats": 162
+        },
+        {
+            "title": "Zwierzogród 2 - KNTJ",
+            "genres": [
+                "animowany"
+            ],
+            "screenings": [
+                {
+                    "time": "10:30",
+                    "occupied": 38,
+                    "total": 156,
+                    "room": "Sala 8 - Muza "
+                }
+            ],
+            "totalOccupied": 38,
+            "totalSeats": 156
+        },
+        {
+            "title": "Mysz-Masz na Święta - KNT",
+            "genres": [
+                "przygodowy",
+                "familijny"
+            ],
+            "screenings": [
+                {
+                    "time": "09:45",
+                    "occupied": 21,
+                    "total": 149,
+                    "room": "Sala 6 - Gdynia"
+                }
+            ],
+            "totalOccupied": 21,
+            "totalSeats": 149
+        },
+        {
+            "title": "Uwierz w Mikołaja 2",
+            "genres": [
+                "komedia"
+            ],
+            "screenings": [
+                {
+                    "time": "11:10",
+                    "occupied": 27,
+                    "total": 167,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "18:15",
+                    "occupied": 15,
+                    "total": 149,
+                    "room": "Sala 6 - Gdynia"
+                }
+            ],
+            "totalOccupied": 42,
+            "totalSeats": 316
+        },
+        {
+            "title": "Zwierzogród 2",
+            "genres": [
+                "animowany",
+                "komedia",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "13:00",
+                    "occupied": 46,
+                    "total": 156,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "13:40",
+                    "occupied": 5,
+                    "total": 371,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "15:00",
+                    "occupied": 15,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "16:10",
+                    "occupied": 45,
+                    "total": 371,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "17:30",
+                    "occupied": 28,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "18:40",
+                    "occupied": 38,
+                    "total": 371,
+                    "room": "Sala 7 - Bałtyk"
+                }
+            ],
+            "totalOccupied": 177,
+            "totalSeats": 1523
+        },
+        {
+            "title": "Norymberga",
+            "genres": [
+                "historyczny",
+                "thriller"
+            ],
+            "screenings": [
+                {
+                    "time": "17:00",
+                    "occupied": 10,
+                    "total": 162,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "20:10",
+                    "occupied": 20,
+                    "total": 162,
+                    "room": "Sala 3 - Tatry"
+                }
+            ],
+            "totalOccupied": 30,
+            "totalSeats": 324
+        },
+        {
+            "title": "Pięć koszmarnych nocy 2",
+            "genres": [
+                "horror",
+                "thriller"
+            ],
+            "screenings": [
+                {
+                    "time": "13:30",
+                    "occupied": 2,
+                    "total": 167,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "16:20",
+                    "occupied": 10,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "19:00",
+                    "occupied": 27,
+                    "total": 167,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "21:30",
+                    "occupied": 14,
+                    "total": 167,
+                    "room": "Sala 4 - Przedwiośnie"
+                }
+            ],
+            "totalOccupied": 53,
+            "totalSeats": 615
+        },
+        {
+            "title": "Jujutsu Kaisen: Execution w Helios Anime",
+            "genres": [
+                "anime"
+            ],
+            "screenings": [
+                {
+                    "time": "12:50",
+                    "occupied": 3,
+                    "total": 141,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "16:40",
+                    "occupied": 20,
+                    "total": 141,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "20:00",
+                    "occupied": 7,
+                    "total": 160,
+                    "room": "Sala 1 - Wolność"
+                }
+            ],
+            "totalOccupied": 30,
+            "totalSeats": 442
+        },
+        {
+            "title": "Zgiń, kochanie",
+            "genres": [
+                "komedia",
+                "dramat",
+                "thriller"
+            ],
+            "screenings": [
+                {
+                    "time": "20:30",
+                    "occupied": 10,
+                    "total": 156,
+                    "room": "Sala 8 - Muza "
+                }
+            ],
+            "totalOccupied": 10,
+            "totalSeats": 156
+        },
+        {
+            "title": "LARP. Miłość, trolle i inne questy - Kultura Dostępna",
+            "genres": [
+                "komedia",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "18:00",
+                    "occupied": 7,
+                    "total": 160,
+                    "room": "Sala 1 - Wolność"
+                }
+            ],
+            "totalOccupied": 7,
+            "totalSeats": 160
+        },
+        {
+            "title": "Ministranci",
+            "genres": [
+                "komediodramat"
+            ],
+            "screenings": [
+                {
+                    "time": "15:30",
+                    "occupied": 2,
+                    "total": 160,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "18:50",
+                    "occupied": 10,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "20:50",
+                    "occupied": 0,
+                    "total": 141,
+                    "room": "Sala 5 - Wisła"
+                }
+            ],
+            "totalOccupied": 12,
+            "totalSeats": 415
+        },
+        {
+            "title": "Dom dobry",
+            "genres": [
+                "dramat"
+            ],
+            "screenings": [
+                {
+                    "time": "13:50",
+                    "occupied": 2,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "17:45",
+                    "occupied": 4,
+                    "total": 156,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "20:00",
+                    "occupied": 6,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "21:15",
+                    "occupied": 9,
+                    "total": 371,
+                    "room": "Sala 7 - Bałtyk"
+                }
+            ],
+            "totalOccupied": 21,
+            "totalSeats": 768
+        },
+        {
+            "title": "André Rieu. Wesołych Świąt! w Helios na Scenie",
+            "genres": [
+                "koncert "
+            ],
+            "screenings": [
+                {
+                    "time": "16:00",
+                    "occupied": 3,
+                    "total": 167,
+                    "room": "Sala 4 - Przedwiośnie"
+                }
+            ],
+            "totalOccupied": 3,
+            "totalSeats": 167
+        },
+        {
+            "title": "Wicked: Na dobre",
+            "genres": [
+                "fantasy",
+                "musical",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "12:20",
+                    "occupied": 2,
+                    "total": 160,
+                    "room": "Sala 1 - Wolność"
+                }
+            ],
+            "totalOccupied": 2,
+            "totalSeats": 160
+        },
+        {
+            "title": "Mikołaj i ekipa",
+            "genres": [
+                "animowany",
+                "familijny",
+                "komedia"
+            ],
+            "screenings": [
+                {
+                    "time": "12:40",
+                    "occupied": 2,
+                    "total": 162,
+                    "room": "Sala 3 - Tatry"
+                }
+            ],
+            "totalOccupied": 2,
+            "totalSeats": 162
+        },
+        {
+            "title": "Mysz-Masz na Święta",
+            "genres": [
+                "familijny",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "11:50",
+                    "occupied": 0,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "14:50",
+                    "occupied": 3,
+                    "total": 162,
+                    "room": "Sala 3 - Tatry"
+                }
+            ],
+            "totalOccupied": 3,
+            "totalSeats": 276
+        },
+        {
+            "title": "Magiczna gwiazdka zwierzaków",
+            "genres": [
+                "animowany",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "11:30",
+                    "occupied": 2,
+                    "total": 149,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "14:40",
+                    "occupied": 0,
+                    "total": 141,
+                    "room": "Sala 5 - Wisła"
+                }
+            ],
+            "totalOccupied": 2,
+            "totalSeats": 290
+        },
+        {
+            "title": "Cicha noc, śmierci noc",
+            "genres": [
+                "horror"
+            ],
+            "screenings": [
+                {
+                    "time": "13:20",
+                    "occupied": 1,
+                    "total": 149,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "18:30",
+                    "occupied": 0,
+                    "total": 141,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "21:30",
+                    "occupied": 4,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                }
+            ],
+            "totalOccupied": 5,
+            "totalSeats": 404
+        },
+        {
+            "title": "Święta z Astrid Lindgren",
+            "genres": [
+                "animowany",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "12:05",
+                    "occupied": 3,
+                    "total": 371,
+                    "room": "Sala 7 - Bałtyk"
+                }
+            ],
+            "totalOccupied": 3,
+            "totalSeats": 371
+        },
+        {
+            "title": "Eleanor Wspaniała",
+            "genres": [
+                "dramat"
+            ],
+            "screenings": [
+                {
+                    "time": "12:30",
+                    "occupied": 0,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                }
+            ],
+            "totalOccupied": 0,
+            "totalSeats": 127
+        },
+        {
+            "title": "Brat",
+            "genres": [
+                "dramat",
+                "obyczajowy"
+            ],
+            "screenings": [
+                {
+                    "time": "15:20",
+                    "occupied": 0,
+                    "total": 156,
+                    "room": "Sala 8 - Muza "
+                }
+            ],
+            "totalOccupied": 0,
+            "totalSeats": 156
+        }
+    ]
+}

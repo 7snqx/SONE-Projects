@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symulator Bramek Logicznych</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%234338ca%22><path d=%22M6 2h12v2h2v2h2v12h-2v2h-2v2H6v-2H4v-2H2V6h2V4h2V2zm2 4v12h8V6H8zm-2 2H4v8h2V8zm14 0h-2v8h2V8z%22/></svg>">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Symulator Bramek Logicznych">
+    <meta property="og:description" content="Interaktywny symulator układów cyfrowych. Buduj, testuj i ucz się logiki cyfrowej w przeglądarce.">
+    <meta property="og:image" content="https://placehold.co/1200x630/4338ca/ffffff?text=Symulator+Logiczny">
+    <meta property="og:url" content="https://twoja-strona.pl">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4338ca',
+                        success: '#10b981',
+                        neutral: {
+                            DEFAULT: '#64748b',
+                            dark: '#1e293b',
+                            light: '#e2e8f0'
+                        },
+                        warning: '#ef4444',
+                        special: '#8b5cf6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        varela: ['Varela Round', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 overflow-hidden transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="h-16 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between px-4 lg:px-6 shadow-sm z-30 relative transition-colors duration-300">
+        <div class="flex items-center gap-3">
+            <!-- Mobile Menu Button (Gates) -->
+            <button id="mobile-gates-btn" class="lg:hidden p-2 -ml-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
+                <span class="material-symbols-rounded">menu</span>
+            </button>
+            
+            <span class="material-symbols-rounded text-primary text-3xl hidden sm:block">memory</span>
+            <h1 class="text-lg lg:text-xl font-semibold text-slate-800 dark:text-white truncate max-w-[150px] sm:max-w-none">Symulator</h1>
+        </div>
+        
+        <div class="flex items-center gap-2 lg:gap-3">
+            <!-- Desktop Toolbar -->
+            <div class="hidden lg:flex items-center gap-3">
+                <div class="flex items-center bg-slate-100 dark:bg-slate-700 rounded-lg p-1">
+                    <button id="undo-btn" class="p-1.5 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-600 rounded-md transition-all disabled:opacity-30 disabled:cursor-not-allowed" title="Cofnij (Ctrl+Z)">
+                        <span class="material-symbols-rounded text-lg">undo</span>
+                    </button>
+                    <button id="redo-btn" class="p-1.5 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-600 rounded-md transition-all disabled:opacity-30 disabled:cursor-not-allowed" title="Ponów (Ctrl+Y)">
+                        <span class="material-symbols-rounded text-lg">redo</span>
+                    </button>
+                    <div class="w-px h-4 bg-slate-300 dark:bg-slate-600 mx-1"></div>
+                    <button id="clear-canvas-btn" class="p-1.5 text-slate-600 dark:text-slate-300 hover:text-red-500 hover:bg-white dark:hover:bg-slate-600 rounded-md transition-all" title="Wyczyść wszystko">
+                        <span class="material-symbols-rounded text-lg">delete</span>
+                    </button>
+                </div>
+
+                <div class="w-px h-8 bg-slate-200 dark:bg-slate-700 mx-1"></div>
+
+                <button id="save-btn" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2">
+                    <span class="material-symbols-rounded text-lg">save</span>
+                    Zapisz
+                </button>
+                <button id="load-btn" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2">
+                    <span class="material-symbols-rounded text-lg">upload_file</span>
+                    Wczytaj
+                </button>
+                <input type="file" id="load-file-input" class="hidden" accept=".json,.cdl,.xml">
+                <div class="flex items-center gap-2 mx-2">
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Szybkość:</span>
+                    <input type="range" id="anim-speed" min="1" max="20" value="5" class="w-24 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary">
+                </div>
+            </div>
+
+            <!-- Mobile Actions -->
+            <button id="test-signal-btn" class="px-3 lg:px-4 py-2 text-sm font-medium text-white bg-success hover:bg-emerald-600 rounded-lg shadow-sm hover:shadow transition-all flex items-center gap-2">
+                <span class="material-symbols-rounded text-lg">play_arrow</span>
+                <span class="hidden sm:inline">Testuj</span>
+            </button>
+
+            <!-- Mobile Info Toggle -->
+            <button id="mobile-info-btn" class="lg:hidden p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
+                <span class="material-symbols-rounded">info</span>
+            </button>
+
+            <div class="w-px h-8 bg-slate-200 dark:bg-slate-700 mx-1 hidden lg:block"></div>
+            
+            <button id="theme-toggle-btn" class="p-2 text-slate-400 hover:text-primary hover:bg-indigo-50 dark:hover:bg-slate-700 rounded-full transition-colors" title="Przełącz motyw">
+                <span class="material-symbols-rounded">dark_mode</span>
+            </button>
+            <button id="help-btn" class="p-2 text-primary bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors relative group" title="Asystent AI">
+                <span class="material-symbols-rounded">smart_toy</span>
+                <span class="absolute -bottom-1 -right-1 flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main id="main-layout" class="flex-1 grid grid-cols-1 lg:grid-cols-[280px_1fr_300px] grid-rows-[1fr_auto] lg:grid-rows-[1fr_32px] overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out relative">
+        
+        <!-- Mobile Overlay -->
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Left Panel: Gates -->
+        <aside id="left-panel" class="fixed inset-y-0 left-0 w-[280px] lg:w-auto lg:static lg:row-span-2 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col z-40 shadow-[4px_0_24px_rgba(0,0,0,0.02)] min-h-0 transition-transform duration-300 transform -translate-x-full lg:translate-x-0">
+            <div class="p-4 border-b border-slate-100 dark:border-slate-700 flex-shrink-0 flex justify-between items-center">
+                <h2 class="font-medium text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider">Bramki Logiczne</h2>
+                <button id="close-left-panel" class="lg:hidden text-slate-400 hover:text-slate-600">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-4 space-y-6 custom-scrollbar">
+                
+                <!-- Section: Sources -->
+                <section>
+                    <h3 class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-base">input</span>
+                        Źródła i Pomiary
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="gate-item" draggable="true" data-type="INPUT">
+                            <div class="gate-preview flex items-center justify-center">
+                                <div class="w-6 h-6 border-2 border-slate-400 rounded bg-white dark:bg-slate-700 dark:border-slate-500 text-[10px] font-bold text-slate-500 dark:text-slate-300 flex items-center justify-center">0</div>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">INPUT</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="OUTPUT">
+                            <div class="gate-preview flex items-center justify-center">
+                                <div class="w-8 h-6 border-2 border-slate-400 rounded bg-slate-100 dark:bg-slate-600 dark:border-slate-500 text-[10px] font-bold text-slate-500 dark:text-slate-300 flex items-center justify-center">0</div>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">OUTPUT</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="PROBE">
+                            <div class="gate-preview flex items-center justify-center">
+                                <span class="material-symbols-rounded text-amber-500">query_stats</span>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">SONDA (Oscyloskop)</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="BUFFER">
+                            <div class="gate-preview flex items-center justify-center">
+                                <div class="w-6 h-6 border-2 border-slate-400 rounded bg-white dark:bg-slate-700 dark:border-slate-500 text-slate-500 dark:text-slate-300 flex items-center justify-center">
+                                    <span class="material-symbols-rounded text-[14px]">forward</span>
+                                </div>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">Bufor / Kontroler</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="LABEL">
+                            <div class="gate-preview flex items-center justify-center">
+                                <span class="material-symbols-rounded text-slate-500 dark:text-slate-400">text_fields</span>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">Etykieta Tekstowa</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Basic Gates -->
+                <section>
+                    <h3 class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-base">grid_view</span>
+                        Bramki Podstawowe
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="gate-item" draggable="true" data-type="AND">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 L 10 35 L 25 35 A 15 15 0 0 0 25 5 L 10 5 Z" />
+                                    <line x1="0" y1="10" x2="10" y2="10" />
+                                    <line x1="0" y1="30" x2="10" y2="30" />
+                                    <line x1="40" y1="20" x2="50" y2="20" />
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">AND</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="OR">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 Q 20 20 10 35 Q 40 35 50 20 Q 40 5 10 5 Z" />
+                                    <line x1="0" y1="10" x2="10" y2="10" />
+                                    <line x1="0" y1="30" x2="10" y2="30" />
+                                    <line x1="50" y1="20" x2="60" y2="20" />
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">OR</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="NOT">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 L 10 35 L 40 20 Z" />
+                                    <circle cx="43" cy="20" r="3" />
+                                    <line x1="0" y1="20" x2="10" y2="20" />
+                                    <line x1="46" y1="20" x2="56" y2="20" />
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">NOT</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Extended Gates -->
+                <section>
+                    <h3 class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-base">extension</span>
+                        Bramki Rozszerzone
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="gate-item" draggable="true" data-type="NAND">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 L 10 35 L 25 35 A 15 15 0 0 0 25 5 L 10 5 Z" />
+                                    <circle cx="43" cy="20" r="3" />
+                                    <line x1="0" y1="10" x2="10" y2="10" />
+                                    <line x1="0" y1="30" x2="10" y2="30" />
+                                    <line x1="46" y1="20" x2="56" y2="20" />
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">NAND</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="NOR">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 Q 20 20 10 35 Q 40 35 50 20 Q 40 5 10 5 Z" />
+                                    <circle cx="53" cy="20" r="3" />
+                                    <line x1="0" y1="10" x2="10" y2="10" />
+                                    <line x1="0" y1="30" x2="10" y2="30" />
+                                    <line x1="56" y1="20" x2="60" y2="20" />
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">NOR</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="XOR">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 Q 20 20 10 35 Q 40 35 50 20 Q 40 5 10 5 Z" />
+                                    <path d="M 2 5 Q 12 20 2 35" />
+                                    <line x1="0" y1="10" x2="5" y2="10" />
+                                    <line x1="0" y1="30" x2="5" y2="30" />
+                                    <line x1="50" y1="20" x2="60" y2="20" />
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">XOR</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="XNOR">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 Q 20 20 10 35 Q 40 35 50 20 Q 40 5 10 5 Z" />
+                                    <path d="M 2 5 Q 12 20 2 35" />
+                                    <circle cx="53" cy="20" r="3" />
+                                    <line x1="0" y1="10" x2="5" y2="10" />
+                                    <line x1="0" y1="30" x2="5" y2="30" />
+                                    <line x1="56" y1="20" x2="60" y2="20" />
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">XNOR</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Adders -->
+                <section>
+                    <h3 class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-base">calculate</span>
+                        Sumatory
+                    </h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="gate-item" draggable="true" data-type="HALF_ADDER">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">HA</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">HALF ADDER</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="FULL_ADDER">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">FA</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">FULL ADDER</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Sequential -->
+                <section>
+                    <h3 class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-base">schedule</span>
+                        Sekwencyjne
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="gate-item" draggable="true" data-type="CLOCK">
+                            <div class="gate-preview flex items-center justify-center">
+                                <span class="material-symbols-rounded text-slate-600 dark:text-slate-400">schedule</span>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">ZEGAR</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="D_FF">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">D-FF</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">D Flip-Flop</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="JK_FF">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">JK-FF</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">JK Flip-Flop</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="COUNTER_4BIT">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">CNT</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">Licznik 4-bit</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="REGISTER_4BIT">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">REG</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">Rejestr 4-bit</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Complex -->
+                <section>
+                    <h3 class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-base">memory</span>
+                        Komponenty Złożone
+                    </h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="gate-item" draggable="true" data-type="MUX">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 15 5 L 45 10 L 45 30 L 15 35 Z" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">MUX</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">Multiplexer 4:1</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="DEMUX">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 15 10 L 45 5 L 45 35 L 15 30 Z" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">DEMUX</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">Demultiplexer 1:4</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="ALU4">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <path d="M 10 5 L 50 15 L 50 25 L 10 35 L 10 25 L 20 20 L 10 15 Z" />
+                                    <text x="35" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">ALU</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">ALU 4-bit</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="RAM">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">RAM</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">RAM 8x4</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="ROM">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="10" y="5" width="40" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">ROM</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">ROM 8x4</span>
+                        </div>
+                        <div class="gate-item" draggable="true" data-type="CPU">
+                            <div class="gate-preview">
+                                <svg viewBox="0 0 60 40" class="w-full h-full stroke-slate-700 dark:stroke-slate-300 fill-none stroke-2">
+                                    <rect x="5" y="5" width="50" height="30" rx="2" />
+                                    <text x="30" y="24" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 stroke-none text-[8px] font-bold">CPU</text>
+                                </svg>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">CPU 4-bit</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Displays -->
+                <section>
+                    <h3 class="text-xs font-semibold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-base">display_settings</span>
+                        Wyświetlacze
+                    </h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="gate-item" draggable="true" data-type="HEX_DISPLAY">
+                            <div class="gate-preview flex items-center justify-center">
+                                <span class="text-2xl font-bold text-slate-600 dark:text-slate-400 font-mono">8</span>
+                            </div>
+                            <span class="gate-label dark:text-slate-300">Wyświetlacz HEX</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- Center: Canvas -->
+        <section id="canvas-container" class="relative bg-slate-50 dark:bg-slate-900 overflow-hidden cursor-crosshair transition-colors duration-300">
+            <!-- World Container for Zoom/Pan -->
+            <div id="world" class="absolute inset-0 origin-top-left will-change-transform">
+                <!-- Grid Background -->
+                <div class="absolute inset-[-5000px] grid-pattern opacity-50 pointer-events-none"></div>
+                
+                <!-- Connections Layer (SVG) -->
+                <svg id="connections-layer" class="absolute inset-[-5000px] w-[10000px] h-[10000px] pointer-events-none z-10 overflow-visible"></svg>
+                
+                <!-- Animation Layer (Canvas) -->
+                <canvas id="animation-layer" width="10000" height="10000" class="absolute inset-[-5000px] w-[10000px] h-[10000px] pointer-events-none z-15"></canvas>
+
+                <!-- Gates Container -->
+                <div id="gates-layer" class="absolute inset-0 z-20">
+                    <!-- Gates will be dropped here -->
+                </div>
+            </div>
+            
+            <!-- Zoom Controls -->
+            <div class="absolute bottom-6 right-6 flex flex-col gap-2 z-50">
+                <button id="zoom-in" class="p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                    <span class="material-symbols-rounded">add</span>
+                </button>
+                <button id="zoom-reset" class="p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold transition-colors">
+                    100%
+                </button>
+                <button id="zoom-out" class="p-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                    <span class="material-symbols-rounded">remove</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Right Panel: Info -->
+        <aside id="right-panel" class="fixed inset-y-0 right-0 w-[300px] lg:w-auto lg:static lg:row-span-2 bg-white dark:bg-slate-800 border-l border-slate-200 dark:border-slate-700 flex flex-col z-40 shadow-[-4px_0_24px_rgba(0,0,0,0.02)] transition-transform duration-300 transform translate-x-full lg:translate-x-0">
+            <div class="p-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+                <h2 class="font-medium text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider">Informacje</h2>
+                <button id="close-right-panel" class="lg:hidden text-slate-400 hover:text-slate-600">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+            
+            <div class="p-6 space-y-8 overflow-y-auto custom-scrollbar">
+                <!-- Tools -->
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-4">Narzędzia</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button id="examples-btn" class="p-3 bg-slate-50 dark:bg-slate-700 hover:bg-indigo-50 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 rounded-xl flex flex-col items-center gap-2 transition-all group">
+                            <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-rounded">grid_view</span>
+                            </div>
+                            <span class="text-xs font-medium text-slate-600 dark:text-slate-300">Przykłady</span>
+                        </button>
+
+                        <button id="truth-table-btn" class="p-3 bg-slate-50 dark:bg-slate-700 hover:bg-indigo-50 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 rounded-xl flex flex-col items-center gap-2 transition-all group">
+                            <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-rounded">table_chart</span>
+                            </div>
+                            <span class="text-xs font-medium text-slate-600 dark:text-slate-300">Tabela</span>
+                        </button>
+
+                        <button id="export-img-btn" class="p-3 bg-slate-50 dark:bg-slate-700 hover:bg-indigo-50 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 rounded-xl flex flex-col items-center gap-2 transition-all group">
+                            <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-rounded">image</span>
+                            </div>
+                            <span class="text-xs font-medium text-slate-600 dark:text-slate-300">Obraz</span>
+                        </button>
+
+                        <button id="export-cedar-btn" class="p-3 bg-slate-50 dark:bg-slate-700 hover:bg-indigo-50 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 rounded-xl flex flex-col items-center gap-2 transition-all group">
+                            <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-rounded">transform</span>
+                            </div>
+                            <span class="text-xs font-medium text-slate-600 dark:text-slate-300">Cedar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-4">Statystyki</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-50 dark:bg-slate-700 p-3 rounded-lg border border-slate-100 dark:border-slate-600 text-center">
+                            <div id="stats-gates" class="text-2xl font-bold text-primary">0</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Bramek</div>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-700 p-3 rounded-lg border border-slate-100 dark:border-slate-600 text-center">
+                            <div id="stats-connections" class="text-2xl font-bold text-primary">0</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Połączeń</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <details class="group">
+                    <summary class="flex items-center justify-between cursor-pointer list-none text-sm font-semibold text-slate-800 dark:text-slate-100 mb-4">
+                        <span>Instrukcja</span>
+                        <span class="material-symbols-rounded transform group-open:rotate-180 transition-transform text-slate-400">expand_more</span>
+                    </summary>
+                    <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-400 pl-2">
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-50 dark:bg-slate-700 text-primary flex items-center justify-center text-xs font-bold">1</span>
+                            <span>Przeciągnij bramkę z lewego panelu na kanwę.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-50 dark:bg-slate-700 text-primary flex items-center justify-center text-xs font-bold">2</span>
+                            <span>Połącz porty klikając wyjście jednej bramki, a potem wejście drugiej.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-50 dark:bg-slate-700 text-primary flex items-center justify-center text-xs font-bold">3</span>
+                            <span>Kliknij na bramkę <b>INPUT</b> aby zmienić jej wartość (0/1).</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-50 dark:bg-slate-700 text-primary flex items-center justify-center text-xs font-bold">4</span>
+                            <span>Użyj przycisku <b>Testuj Sygnał</b> aby zobaczyć przepływ.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-50 dark:bg-slate-700 text-primary flex items-center justify-center text-xs font-bold">5</span>
+                            <span>Usuń bramkę najeżdżając na nią i klikając ikonę kosza.</span>
+                        </li>
+                    </ol>
+                </details>
+            </div>
+        </aside>
+
+        <!-- Bottom Panel: Oscilloscope -->
+        <section id="oscilloscope-panel" class="col-span-1 lg:col-start-2 lg:col-end-3 bg-slate-900 border-t border-slate-700 flex flex-col z-20 overflow-hidden">
+            <div class="h-8 bg-slate-800 border-b border-slate-700 flex items-center px-4 justify-between flex-shrink-0">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                    <button id="osc-toggle-btn" class="hover:text-white transition-colors">
+                        <span class="material-symbols-rounded text-sm transform transition-transform duration-300" id="osc-toggle-icon" style="transform: rotate(-90deg)">expand_more</span>
+                    </button>
+                    <span class="material-symbols-rounded text-sm text-amber-500">query_stats</span>
+                    Oscyloskop
+                </span>
+                <div class="flex gap-2">
+                    <button id="osc-pause-btn" class="text-slate-400 hover:text-white" title="Pauzuj/Wznów">
+                        <span class="material-symbols-rounded text-sm">pause</span>
+                    </button>
+                    <button id="osc-clear-btn" class="text-slate-400 hover:text-white" title="Wyczyść">
+                        <span class="material-symbols-rounded text-sm">block</span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex-1 relative overflow-hidden">
+                <canvas id="oscilloscope-canvas" class="w-full h-full block"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <!-- Help / Chat Modal -->
+    <div id="help-modal" class="fixed inset-0 bg-slate-900/50 z-50 hidden flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-md h-[600px] flex flex-col overflow-hidden transition-colors duration-300">
+            <!-- Chat Header -->
+            <div class="p-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-rounded text-primary text-lg">smart_toy</span>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-slate-800 dark:text-white text-sm">Asystent AI</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Baza wiedzy o logice</p>
+                    </div>
+                </div>
+                <button id="close-help-btn" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-white dark:bg-slate-900 custom-scrollbar">
+                <!-- Welcome Message -->
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center mt-1">
+                        <span class="material-symbols-rounded text-primary text-xs">smart_toy</span>
+                    </div>
+                    <div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-2xl rounded-tl-none text-sm text-slate-700 dark:text-slate-300 max-w-[85%]">
+                        <p class="font-semibold mb-1 text-primary">Witaj!</p>
+                        <p>Jestem Twoim wirtualnym asystentem. Zapytaj mnie o bramki logiczne (np. "jak działa XOR"), elementy symulatora lub teorię.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="p-4 bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700">
+                <div class="flex gap-2">
+                    <input type="text" id="chat-input" placeholder="Zadaj pytanie..." class="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-primary dark:focus:border-primary transition-colors">
+                    <button id="chat-send-btn" class="p-2 bg-primary hover:bg-indigo-700 text-white rounded-lg transition-colors flex items-center justify-center">
+                        <span class="material-symbols-rounded text-lg">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cedar Converter Modal -->
+    <div id="cedar-modal" class="fixed inset-0 bg-slate-900/50 z-50 hidden flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-md p-6 transition-colors duration-300 relative">
+            <button id="close-cedar-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-slate-700 flex items-center justify-center text-primary">
+                    <span class="material-symbols-rounded text-xl">transform</span>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-slate-800 dark:text-white">Konwerter Cedar Logic</h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">JSON &rarr; CDL</p>
+                </div>
+            </div>
+            
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                Wybierz plik zapisu (.json) z tego symulatora, aby przekonwertować go na format obsługiwany przez Cedar Logic.
+            </p>
+
+            <div class="space-y-4">
+                <div id="cedar-drop-zone" class="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl p-8 text-center hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:border-primary transition-all cursor-pointer group">
+                    <span class="material-symbols-rounded text-4xl text-slate-400 group-hover:text-primary mb-2 transition-colors">upload_file</span>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors">Kliknij lub upuść plik tutaj</p>
+                    <input type="file" id="cedar-file-input" class="hidden" accept=".json">
+                </div>
+                
+                <div id="cedar-file-info" class="hidden text-sm text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 p-3 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center gap-2 overflow-hidden">
+                        <span class="material-symbols-rounded text-primary text-lg">description</span>
+                        <span id="cedar-filename" class="truncate font-medium">filename.json</span>
+                    </div>
+                    <button id="cedar-remove-file" class="text-slate-400 hover:text-red-500 transition-colors">
+                        <span class="material-symbols-rounded text-lg">delete</span>
+                    </button>
+                </div>
+
+                <button id="cedar-convert-btn" disabled class="w-full py-3 bg-primary hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-xl transition-colors font-medium flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20">
+                    <span class="material-symbols-rounded">transform</span>
+                    Konwertuj i Pobierz
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Examples Modal -->
+    <div id="examples-modal" class="fixed inset-0 bg-slate-900/50 z-50 hidden flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-2xl p-6 transition-colors duration-300 relative max-h-[90vh] flex flex-col">
+            <button id="close-examples-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-slate-700 flex items-center justify-center text-primary">
+                    <span class="material-symbols-rounded text-xl">grid_view</span>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-slate-800 dark:text-white">Przykłady Układów</h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Wybierz gotowy projekt, aby zobaczyć jak działa</p>
+                </div>
+            </div>
+            
+            <div id="examples-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto custom-scrollbar p-1">
+                <!-- Examples will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Truth Table Modal -->
+    <div id="truth-table-modal" class="fixed inset-0 bg-slate-900/50 z-50 hidden flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-3xl p-6 transition-colors duration-300 relative max-h-[90vh] flex flex-col">
+            <button id="close-tt-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-slate-700 flex items-center justify-center text-primary">
+                    <span class="material-symbols-rounded text-xl">table_chart</span>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-slate-800 dark:text-white">Tabela Prawdy</h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Automatycznie wygenerowana dla obecnego układu</p>
+                </div>
+            </div>
+            
+            <div class="flex-1 overflow-auto custom-scrollbar bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+                <table class="w-full text-sm text-left text-slate-600 dark:text-slate-300">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-100 dark:bg-slate-800 dark:text-slate-400 sticky top-0">
+                        <tr id="tt-header">
+                            <!-- Headers injected here -->
+                        </tr>
+                    </thead>
+                    <tbody id="tt-body" class="divide-y divide-slate-200 dark:divide-slate-700">
+                        <!-- Rows injected here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="tt-empty-msg" class="hidden text-center py-8 text-slate-500">
+                Brak wejść lub wyjść w układzie. Dodaj bramki INPUT i OUTPUT.
+            </div>
+        </div>
+    </div>
+
+    <script src="knowledge.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
