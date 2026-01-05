@@ -1,0 +1,913 @@
+{
+    "cinema": "Helios Łódź",
+    "date": "2026-01-08",
+    "scrapedAt": "2026-01-04T13:28:48+01:00",
+    "totalMovies": 11,
+    "totalScreenings": 35,
+    "movies": [
+        {
+            "movieTitle": "Pomoc domowa",
+            "movieId": "543d3eec-4781-4c27-bb86-c12cd44aefaf",
+            "poster": "https:\/\/movies.helios.pl\/images\/pomocdomowaplakat.jpg",
+            "duration": 132,
+            "genres": [
+                "thriller"
+            ],
+            "rating": "15",
+            "imdbRating": null,
+            "description": "Uciekająca przed demonami przeszłości Millie, przyjmuje pracę w domu bogatego małżeństwa, którego mroczne tajemnice wkrótce okażą się dla niej śmiertelnym zagrożeniem.",
+            "director": "Paul Feig",
+            "country": " USA",
+            "year": "2025",
+            "premiereDate": "2026-01-01T00:00:00+01:00",
+            "isForChildren": false,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "12:10",
+                    "timestamp": 1767870600,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 3 - Tatry",
+                    "screenId": "37d105a9-355c-47aa-b65e-8108cf3e6fbb",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 148,
+                        "free": 148,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/14fa0f5e-6f9b-4a74-b841-8351befd0301?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "15:45",
+                    "timestamp": 1767883500,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 2 - Polonia - Dream",
+                    "screenId": "ea4f4362-4571-4da5-9db3-2c60acf89909",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 114,
+                        "free": 112,
+                        "occupied": 2,
+                        "occupancyPercent": 2
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/c17e942b-1c75-4530-ba31-549ed8c9db7d?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "18:30",
+                    "timestamp": 1767893400,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 6 - Gdynia",
+                    "screenId": "3a7efa61-c52a-4aca-a704-a186dbd648fe",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 146,
+                        "free": 146,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/556f17fb-e96e-44f0-8cb0-96e7d5e06479?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "21:30",
+                    "timestamp": 1767904200,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 6 - Gdynia",
+                    "screenId": "3a7efa61-c52a-4aca-a704-a186dbd648fe",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 146,
+                        "free": 144,
+                        "occupied": 2,
+                        "occupancyPercent": 1
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/78211fb8-782c-4a6b-bd82-53ac268d8fd7?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 1
+        },
+        {
+            "movieTitle": "SpongeBob: Klątwa Pirata",
+            "movieId": "18a5f8ee-7e05-48ec-b80b-9025020801ab",
+            "poster": "https:\/\/movies.helios.pl\/images\/spongebobplakat.jpg",
+            "duration": 95,
+            "genres": [
+                "animowany",
+                "komedia",
+                "przygodowy"
+            ],
+            "rating": "6",
+            "imdbRating": null,
+            "description": "Najsłyniejsza gąbka świata, ulubiony animowany bohater wielu dzieci i dorosłych przeżyje kolejne pełne niebezpieczeństw przygody. SpongeBob po raz kolejny dostarczy emocji i wiele śmiechu.",
+            "director": "Derek Drymon",
+            "country": " USA",
+            "year": "2025",
+            "premiereDate": "2026-01-02T00:00:00+01:00",
+            "isForChildren": true,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "11:40",
+                    "timestamp": 1767868800,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 5 - Wisła",
+                    "screenId": "f7fd6b63-44f3-4d04-8062-a932e0aabd98",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 138,
+                        "free": 138,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/a376f2af-943d-4055-8755-df88c04ef989?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "13:15",
+                    "timestamp": 1767874500,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 9 - Capitol - Dream",
+                    "screenId": "e335ba83-911b-424b-9df0-2b3cc6c6aaff",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 127,
+                        "free": 127,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/2b86e30c-6541-43ac-909a-233cea75154d?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "15:00",
+                    "timestamp": 1767880800,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 4 - Przedwiośnie",
+                    "screenId": "a83361dc-cc33-49b0-852b-f27aef531668",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 149,
+                        "free": 149,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/926142c4-71d2-4b07-9d39-76ab18b9e3b5?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "17:15",
+                    "timestamp": 1767888900,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 4 - Przedwiośnie",
+                    "screenId": "a83361dc-cc33-49b0-852b-f27aef531668",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 149,
+                        "free": 147,
+                        "occupied": 2,
+                        "occupancyPercent": 1
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/ce2f41e3-a1e7-4aea-abd6-2e6ca8c8c8fe?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "18:45",
+                    "timestamp": 1767894300,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 2 - Polonia - Dream",
+                    "screenId": "ea4f4362-4571-4da5-9db3-2c60acf89909",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 114,
+                        "free": 112,
+                        "occupied": 2,
+                        "occupancyPercent": 2
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/1764dd7f-0139-4169-b03b-86a2931cac79?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 1
+        },
+        {
+            "movieTitle": "Mysz-Masz na Święta",
+            "movieId": "810ecb3d-4ab8-4f54-813d-1636bcfa10ca",
+            "poster": "https:\/\/movies.helios.pl\/images\/Myszmaszplakat.jpg",
+            "duration": 80,
+            "genres": [
+                "familijny",
+                "przygodowy"
+            ],
+            "rating": "6",
+            "imdbRating": "6.5",
+            "description": "Rodzina myszek cieszy się na kolejne Boże Narodzenie w swoim przytulnym domku na wsi.",
+            "director": "Henrik Martin Dahlsbakken",
+            "country": " Norwegia",
+            "year": "2025",
+            "premiereDate": "2025-12-05T00:00:00+01:00",
+            "isForChildren": true,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "11:50",
+                    "timestamp": 1767869400,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 1 - Wolność",
+                    "screenId": "c5c2727f-7c8a-4f40-a993-3b32a8581ac1",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 154,
+                        "free": 154,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/f188d044-274e-41c0-ba9b-8c8ad0682ab6?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Dziki",
+            "movieId": "945494cc-cba7-4ec3-9d19-11de4baeccb7",
+            "poster": "https:\/\/movies.helios.pl\/images\/Dzikiplakat.jpg",
+            "duration": 133,
+            "genres": [
+                "akcja"
+            ],
+            "rating": "16",
+            "imdbRating": null,
+            "description": "Historia DZIKIEGO przenosi widzów w świat, gdzie mit splata się z historią – w tajemnicze, majestatyczne Karpaty XVII wieku.",
+            "director": "Maciej Kawulski",
+            "country": " Polska",
+            "year": "2025",
+            "premiereDate": "2026-01-01T00:00:00+01:00",
+            "isForChildren": false,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "11:30",
+                    "timestamp": 1767868200,
+                    "format": "2D\/ORG",
+                    "hall": "Sala 6 - Gdynia",
+                    "screenId": "3a7efa61-c52a-4aca-a704-a186dbd648fe",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 146,
+                        "free": 146,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/8d15ada6-4f1d-4d56-8e02-2ffa411e5aec?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "13:50",
+                    "timestamp": 1767876600,
+                    "format": "2D\/ORG",
+                    "hall": "Sala 1 - Wolność",
+                    "screenId": "c5c2727f-7c8a-4f40-a993-3b32a8581ac1",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 154,
+                        "free": 154,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/6a3b6c1d-5022-4026-91e6-17b0339ad12c?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "17:00",
+                    "timestamp": 1767888000,
+                    "format": "2D\/ORG",
+                    "hall": "Sala 1 - Wolność",
+                    "screenId": "c5c2727f-7c8a-4f40-a993-3b32a8581ac1",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 154,
+                        "free": 154,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/f8679e7c-2068-4b64-8208-3a90acc0301c?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "19:30",
+                    "timestamp": 1767897000,
+                    "format": "2D\/ORG",
+                    "hall": "Sala 4 - Przedwiośnie",
+                    "screenId": "a83361dc-cc33-49b0-852b-f27aef531668",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 149,
+                        "free": 149,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/6b511aa2-aabf-481e-8880-563778172f4a?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "21:00",
+                    "timestamp": 1767902400,
+                    "format": "2D\/ORG",
+                    "hall": "Sala 2 - Polonia - Dream",
+                    "screenId": "ea4f4362-4571-4da5-9db3-2c60acf89909",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 114,
+                        "free": 114,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/7aa91f9d-fbd6-48a1-ad26-56041bab4902?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Ścieżki życia",
+            "movieId": "65051e1d-fff6-48f4-a2cb-93c1e4c0789c",
+            "poster": "https:\/\/movies.helios.pl\/images\/Sciezkizyciaplakat(1).jpg",
+            "duration": 116,
+            "genres": [
+                "dramat"
+            ],
+            "rating": "15",
+            "imdbRating": null,
+            "description": "„Ścieżki życia” to inspirowana prawdziwymi wydarzeniami poruszająca i pełna nadziei opowieść o dojrzałej miłości, która okazuje się silniejsza niż życiowe kryzysy.",
+            "director": "Marianne Elliott",
+            "country": " Wielka Brytania",
+            "year": "2024",
+            "premiereDate": "2026-01-02T00:00:00+01:00",
+            "isForChildren": false,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "20:00",
+                    "timestamp": 1767898800,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 1 - Wolność",
+                    "screenId": "c5c2727f-7c8a-4f40-a993-3b32a8581ac1",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 154,
+                        "free": 154,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/49c54760-4c01-44ac-b098-f19520c0bc6e?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Zwierzogród 2",
+            "movieId": "fd579877-8215-4a72-a1b6-d2bae868c4f4",
+            "poster": "https:\/\/movies.helios.pl\/images\/zwierzogrod2plakat.jpg",
+            "duration": 108,
+            "genres": [
+                "animowany",
+                "komedia",
+                "przygodowy"
+            ],
+            "rating": "6",
+            "imdbRating": "7.7",
+            "description": "Kiedy w tętniącym życiem Zwierzogrodzie pojawia się tajemniczy gad, miasto pogrąża się w chaosie. Detektywi Judy Hops i Nick Bajer stają przed najtrudniejszą sprawą w swojej karierze.",
+            "director": "Jared Bush, Byron Howard",
+            "country": " USA",
+            "year": "2025",
+            "premiereDate": "2025-11-26T00:00:00+01:00",
+            "isForChildren": true,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "12:30",
+                    "timestamp": 1767871800,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 4 - Przedwiośnie",
+                    "screenId": "a83361dc-cc33-49b0-852b-f27aef531668",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 149,
+                        "free": 149,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/bfedc549-73e6-4578-a2b7-087c305c0eab?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "15:15",
+                    "timestamp": 1767881700,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 3 - Tatry",
+                    "screenId": "37d105a9-355c-47aa-b65e-8108cf3e6fbb",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 148,
+                        "free": 148,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/91cd0f53-515d-4013-82e2-c7646366b2b8?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "17:45",
+                    "timestamp": 1767890700,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 3 - Tatry",
+                    "screenId": "37d105a9-355c-47aa-b65e-8108cf3e6fbb",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 148,
+                        "free": 146,
+                        "occupied": 2,
+                        "occupancyPercent": 1
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/12c1a880-8dbb-466f-8b57-55fd304d6548?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Anakonda",
+            "movieId": "ce987934-960a-4725-a6f4-1345341b5293",
+            "poster": "https:\/\/movies.helios.pl\/images\/Anakondaplakatonline.jpg",
+            "duration": 100,
+            "genres": [
+                "akcja",
+                "przygodowy"
+            ],
+            "rating": "13",
+            "imdbRating": null,
+            "description": "Doug (Jack Black) i Griff (Paul Rudd) są najlepszymi przyjaciółmi od dzieciństwa i zawsze marzyli o nakręceniu remake'u swojego ulubionego filmu wszech czasów: kinowego klasyka – \"Anakonda\".",
+            "director": "Tom Gormican",
+            "country": " USA",
+            "year": "2025",
+            "premiereDate": "2025-12-26T00:00:00+01:00",
+            "isForChildren": false,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "16:00",
+                    "timestamp": 1767884400,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 5 - Wisła",
+                    "screenId": "f7fd6b63-44f3-4d04-8062-a932e0aabd98",
+                    "adDuration": 22,
+                    "stats": {
+                        "total": 138,
+                        "free": 138,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/2263742a-1b31-4267-bfdc-56fc8ca0a586?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "20:15",
+                    "timestamp": 1767899700,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 3 - Tatry",
+                    "screenId": "37d105a9-355c-47aa-b65e-8108cf3e6fbb",
+                    "adDuration": 22,
+                    "stats": {
+                        "total": 148,
+                        "free": 148,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/13a670a5-5559-4b74-8f9f-fced6adfb975?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Avatar: Ogień i popiół",
+            "movieId": "9e1277db-267c-44b2-8bb8-e9e508682d8a",
+            "poster": "https:\/\/movies.helios.pl\/images\/avatar3plakat.jpg",
+            "duration": 197,
+            "genres": [
+                "akcja",
+                "fantasy",
+                "przygodowy"
+            ],
+            "rating": "13",
+            "imdbRating": null,
+            "description": "Avatar: Ogień i popiół to kolejny rozdział kultowego kinowego uniwersum, które łączy zaawansowaną technologię i niezapomniane emocje w wizjonerskiej opowieści\n",
+            "director": "James Cameron",
+            "country": " USA",
+            "year": "2025",
+            "premiereDate": "2025-12-19T00:00:00+01:00",
+            "isForChildren": false,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "11:40",
+                    "timestamp": 1767868800,
+                    "format": "2D\/DUB\/ATMOS",
+                    "hall": "Sala 2 - Polonia - Dream",
+                    "screenId": "ea4f4362-4571-4da5-9db3-2c60acf89909",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 114,
+                        "free": 114,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/d8fb4482-ce2a-472a-bc10-23fb01485cb8?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "12:20",
+                    "timestamp": 1767871200,
+                    "format": "3D\/NAP\/HFR",
+                    "hall": "Sala 7 - Bałtyk",
+                    "screenId": "2bb0c3a7-b730-4f48-bbd2-299ddd9b14b0",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 364,
+                        "free": 364,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/8bae4236-2f39-4113-be44-fdc92bade093?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "13:30",
+                    "timestamp": 1767875400,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 8 - Muza ",
+                    "screenId": "c1cb3c47-5d55-494b-bdfa-321af9d4a47c",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 149,
+                        "free": 149,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/2c41a711-e9d6-4983-b86e-ff5193b3e19c?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "14:30",
+                    "timestamp": 1767879000,
+                    "format": "3D\/DUB\/HFR",
+                    "hall": "Sala 6 - Gdynia",
+                    "screenId": "3a7efa61-c52a-4aca-a704-a186dbd648fe",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 146,
+                        "free": 146,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/5222e5a9-f470-428f-bb84-ad9e37702074?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "15:30",
+                    "timestamp": 1767882600,
+                    "format": "2D\/DUB\/ATMOS",
+                    "hall": "Sala 9 - Capitol - Dream",
+                    "screenId": "e335ba83-911b-424b-9df0-2b3cc6c6aaff",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 127,
+                        "free": 127,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/b7e70c5e-07fd-43a1-a8b6-7804c082ec11?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "16:30",
+                    "timestamp": 1767886200,
+                    "format": "3D\/DUB\/HFR",
+                    "hall": "Sala 7 - Bałtyk",
+                    "screenId": "2bb0c3a7-b730-4f48-bbd2-299ddd9b14b0",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 364,
+                        "free": 364,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/bce23e40-3497-46a4-9472-fe73069e46fe?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "17:30",
+                    "timestamp": 1767889800,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 8 - Muza ",
+                    "screenId": "c1cb3c47-5d55-494b-bdfa-321af9d4a47c",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 149,
+                        "free": 148,
+                        "occupied": 1,
+                        "occupancyPercent": 1
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/3625c4af-ec73-4720-b4b2-6d7f43e7a6f3?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "19:45",
+                    "timestamp": 1767897900,
+                    "format": "2D\/NAP\/ATMOS",
+                    "hall": "Sala 9 - Capitol - Dream",
+                    "screenId": "e335ba83-911b-424b-9df0-2b3cc6c6aaff",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 127,
+                        "free": 125,
+                        "occupied": 2,
+                        "occupancyPercent": 2
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/739009f0-f404-4233-be8a-7b7cd50290e3?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "20:30",
+                    "timestamp": 1767900600,
+                    "format": "3D\/NAP\/HFR",
+                    "hall": "Sala 7 - Bałtyk",
+                    "screenId": "2bb0c3a7-b730-4f48-bbd2-299ddd9b14b0",
+                    "adDuration": 20,
+                    "stats": {
+                        "total": 364,
+                        "free": 362,
+                        "occupied": 2,
+                        "occupancyPercent": 1
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/5ea8d3c1-0685-41df-a059-70d9703d2e01?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Rufus. Potwór morski, który nie umiał pływać ",
+            "movieId": "15359271-61e1-4582-8c0e-3e216eac443e",
+            "poster": "https:\/\/movies.helios.pl\/images\/RufusPotwormorskiktorynieumialplywacplakat.jpg",
+            "duration": 80,
+            "genres": [
+                "animowany"
+            ],
+            "rating": "4",
+            "imdbRating": null,
+            "description": "„Rufus. Potwór morski, który nie umiał pływać” to ciepła, wzruszająca opowieść o odwadze, przyjaźni i wierze w siebie. Bo czasem największym bohaterem jest ten, kto najbardziej się boi.",
+            "director": "Endre Skandfer",
+            "country": " Belgia, Niemcy, Norwegia",
+            "year": "2025",
+            "premiereDate": "2025-12-26T00:00:00+01:00",
+            "isForChildren": true,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "11:30",
+                    "timestamp": 1767868200,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 8 - Muza ",
+                    "screenId": "c1cb3c47-5d55-494b-bdfa-321af9d4a47c",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 149,
+                        "free": 149,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/3cc7ab9d-5f99-4255-ab17-7f59f8711c45?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "14:00",
+                    "timestamp": 1767877200,
+                    "format": "2D\/DUB",
+                    "hall": "Sala 5 - Wisła",
+                    "screenId": "f7fd6b63-44f3-4d04-8062-a932e0aabd98",
+                    "adDuration": 15,
+                    "stats": {
+                        "total": 138,
+                        "free": 138,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/6e5d5d9b-a326-40d0-bf2a-eb61da4e8314?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Pies 51",
+            "movieId": "b99ce0f8-c536-4af1-bf3a-e07538bb7449",
+            "poster": "https:\/\/movies.helios.pl\/images\/Pies51plakat.jpg",
+            "duration": 106,
+            "genres": [
+                "kryminał",
+                "thriller",
+                "science fiction"
+            ],
+            "rating": "15",
+            "imdbRating": null,
+            "description": "W niedalekiej przyszłości Paryż podzielony jest na trzy strefy społeczne, a nad porządkiem czuwa ALMA – zaawansowana sztuczna inteligencja, która całkowicie odmieniła funkcjonowanie policji.",
+            "director": "Cedric Jimenez",
+            "country": " Francja",
+            "year": "2025",
+            "premiereDate": "2026-01-02T00:00:00+01:00",
+            "isForChildren": false,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "18:15",
+                    "timestamp": 1767892500,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 5 - Wisła",
+                    "screenId": "f7fd6b63-44f3-4d04-8062-a932e0aabd98",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 138,
+                        "free": 138,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/9d893f6f-4ab6-4484-9326-eeb216ff42e3?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                },
+                {
+                    "time": "21:30",
+                    "timestamp": 1767904200,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 8 - Muza ",
+                    "screenId": "c1cb3c47-5d55-494b-bdfa-321af9d4a47c",
+                    "adDuration": 25,
+                    "stats": {
+                        "total": 149,
+                        "free": 149,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/a0134bb5-a9b7-46fa-99a0-8063cc9a53fe?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        },
+        {
+            "movieTitle": "Song Sung Blue",
+            "movieId": "9c937afd-eb3c-4689-980c-baef0af1bba8",
+            "poster": "https:\/\/movies.helios.pl\/images\/SongSungBlueplakat.jpg",
+            "duration": 132,
+            "genres": [
+                "dramat",
+                "musical"
+            ],
+            "rating": "13",
+            "imdbRating": null,
+            "description": "Opowieść o wytrwałości, miłości i radości z odnalezienia swojego miejsca w świecie, nawet jeśli nie jest to miejsce, które sobie wymarzyliśmy.",
+            "director": "Craig Brewer",
+            "country": " USA",
+            "year": "2025",
+            "premiereDate": "2025-12-26T00:00:00+01:00",
+            "isForChildren": false,
+            "isSpecialEvent": false,
+            "screenings": [
+                {
+                    "time": "20:45",
+                    "timestamp": 1767901500,
+                    "format": "2D\/NAP",
+                    "hall": "Sala 5 - Wisła",
+                    "screenId": "f7fd6b63-44f3-4d04-8062-a932e0aabd98",
+                    "adDuration": 22,
+                    "stats": {
+                        "total": 138,
+                        "free": 138,
+                        "occupied": 0,
+                        "occupancyPercent": 0
+                    },
+                    "url": "https:\/\/bilety.helios.pl\/screen\/d71a7572-a565-459f-ab21-878ba1a669db?cinemaId=46055d88-5f34-44a0-9584-b041caa71e26"
+                }
+            ],
+            "popularity": 0
+        }
+    ],
+    "halls": [
+        {
+            "id": "c5c2727f-7c8a-4f40-a993-3b32a8581ac1",
+            "name": "Sala 1 - Wolność",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "Mysz-Masz na Święta",
+                "time": "11:50",
+                "timestamp": 1767869400,
+                "poster": "https:\/\/movies.helios.pl\/images\/Myszmaszplakat.jpg",
+                "duration": 80,
+                "adDuration": 15,
+                "occupied": 0,
+                "total": 154
+            }
+        },
+        {
+            "id": "ea4f4362-4571-4da5-9db3-2c60acf89909",
+            "name": "Sala 2 - Polonia - Dream",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "Avatar: Ogień i popiół",
+                "time": "11:40",
+                "timestamp": 1767868800,
+                "poster": "https:\/\/movies.helios.pl\/images\/avatar3plakat.jpg",
+                "duration": 197,
+                "adDuration": 20,
+                "occupied": 0,
+                "total": 114
+            }
+        },
+        {
+            "id": "37d105a9-355c-47aa-b65e-8108cf3e6fbb",
+            "name": "Sala 3 - Tatry",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "Pomoc domowa",
+                "time": "12:10",
+                "timestamp": 1767870600,
+                "poster": "https:\/\/movies.helios.pl\/images\/pomocdomowaplakat.jpg",
+                "duration": 132,
+                "adDuration": 25,
+                "occupied": 0,
+                "total": 148
+            }
+        },
+        {
+            "id": "a83361dc-cc33-49b0-852b-f27aef531668",
+            "name": "Sala 4 - Przedwiośnie",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "Zwierzogród 2",
+                "time": "12:30",
+                "timestamp": 1767871800,
+                "poster": "https:\/\/movies.helios.pl\/images\/zwierzogrod2plakat.jpg",
+                "duration": 108,
+                "adDuration": 15,
+                "occupied": 0,
+                "total": 149
+            }
+        },
+        {
+            "id": "f7fd6b63-44f3-4d04-8062-a932e0aabd98",
+            "name": "Sala 5 - Wisła",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "SpongeBob: Klątwa Pirata",
+                "time": "11:40",
+                "timestamp": 1767868800,
+                "poster": "https:\/\/movies.helios.pl\/images\/spongebobplakat.jpg",
+                "duration": 95,
+                "adDuration": 15,
+                "occupied": 0,
+                "total": 138
+            }
+        },
+        {
+            "id": "3a7efa61-c52a-4aca-a704-a186dbd648fe",
+            "name": "Sala 6 - Gdynia",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "Dziki",
+                "time": "11:30",
+                "timestamp": 1767868200,
+                "poster": "https:\/\/movies.helios.pl\/images\/Dzikiplakat.jpg",
+                "duration": 133,
+                "adDuration": 25,
+                "occupied": 0,
+                "total": 146
+            }
+        },
+        {
+            "id": "2bb0c3a7-b730-4f48-bbd2-299ddd9b14b0",
+            "name": "Sala 7 - Bałtyk",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "Avatar: Ogień i popiół",
+                "time": "12:20",
+                "timestamp": 1767871200,
+                "poster": "https:\/\/movies.helios.pl\/images\/avatar3plakat.jpg",
+                "duration": 197,
+                "adDuration": 20,
+                "occupied": 0,
+                "total": 364
+            }
+        },
+        {
+            "id": "c1cb3c47-5d55-494b-bdfa-321af9d4a47c",
+            "name": "Sala 8 - Muza ",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "Rufus. Potwór morski, który nie umiał pływać ",
+                "time": "11:30",
+                "timestamp": 1767868200,
+                "poster": "https:\/\/movies.helios.pl\/images\/RufusPotwormorskiktorynieumialplywacplakat.jpg",
+                "duration": 80,
+                "adDuration": 15,
+                "occupied": 0,
+                "total": 149
+            }
+        },
+        {
+            "id": "e335ba83-911b-424b-9df0-2b3cc6c6aaff",
+            "name": "Sala 9 - Capitol - Dream",
+            "currentScreening": null,
+            "nextScreening": {
+                "title": "SpongeBob: Klątwa Pirata",
+                "time": "13:15",
+                "timestamp": 1767874500,
+                "poster": "https:\/\/movies.helios.pl\/images\/spongebobplakat.jpg",
+                "duration": 95,
+                "adDuration": 15,
+                "occupied": 0,
+                "total": 127
+            }
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Dyspozycyjności</title>
+  <link rel="stylesheet" href="style.css" media="screen and (min-width: 1335px)">
+  <link rel="stylesheet" href="styleMobile.css" media="screen and (max-width: 1335px)">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link  rel="icon" type="image/x-icon" href="assets/img/notesIcon.png" />
+</head>
+<body>
+  <header>
+      <h1>Dyspozycyjność, <input id="personData" type="text" placeholder="Imię Nazwisko"></h1>
+      <div class="weekDaySelector">
+        <h2>Pierwszy dzień tygodnia: <button id="selectedDay" onclick="showDayOptions()"></button>
+        <div class="dayOptions">
+          <button onclick="renderDispoForm(1); hideDayOptions();">Poniedziałek</button>
+          <button onclick="renderDispoForm(2); hideDayOptions();">Wtorek</button>
+          <button onclick="renderDispoForm(3); hideDayOptions();">Środa</button>
+          <button onclick="renderDispoForm(4); hideDayOptions();">Czwartek</button>
+          <button onclick="renderDispoForm(5); hideDayOptions();">Piątek</button>
+          <button onclick="renderDispoForm(6); hideDayOptions();">Sobota</button>
+          <button onclick="renderDispoForm(7); hideDayOptions();">Niedziela</button>
+        </div>
+        </h2>
+      </div>
+  </header>
+  <form id="dispoForm">
+  </form>
+  <div class="buttons">
+    <button class="clear" onclick="clearForm()"><span class="material-symbols-rounded">delete_sweep</span>WYCZYŚĆ</button>
+    <button class="send" type="button" onclick="generateTable()"><span class="material-symbols-rounded">content_copy</span>KOPIUJ</button>
+    <button class="send" type="button" onclick="sendMail()"><span class="material-symbols-rounded">send</span>WYŚLIJ</button>
+    <p class="gmailOnly"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="gmailLogo">Gmail only</p>
+  </div>
+<div id="tb" style="display: none; position: sticky;"></div>
+  <div id="endOfPage"></div>
+  <div class="alertSuccess">
+    <span class="outerDot"><span class="material-symbols-rounded successIcon">check_circle</span></span>
+    <p>Skopiowano pomyślnie</p>
+  </div>
+  <div class="alertError">
+    <span class="outerDot"><span class="material-symbols-rounded successIcon">error</span></span>
+    <p>Błąd kopiowania</p>
+  </div>
+  <div class="alertDay">
+    <span class="outerDot"><span id="dayAlertIcon" class="material-symbols-rounded successIcon">acute</span></span>
+    <p>Wypełnij wszystkie dni</p>
+  </div>
+</body>
+</html>

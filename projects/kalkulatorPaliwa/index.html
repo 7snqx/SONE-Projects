@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator spalania paliwa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleMobile.css" media="(max-width: 800px)" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!--//google material icons-->
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><span class="material-symbols-rounded" >gas_meter</span>Kalkulator spalania paliwa</h1>
+    </header>
+    <main>
+        <div class="left">
+            <div class="carData" id="carData">
+                <h2><span class="material-symbols-rounded" >docs</span>Dane do obliczeń</h2>
+                    <h3>Średnie spalanie</h3>
+                        <p><input type="number" placeholder="6.5" id="consumptionInput"><label class="unit">L/100Km</label></p>
+                    <h3>Planowany dystans</h3>
+                        <p><input type="number" placeholder="100" id="distanceInput"><label class="unit">Km</label></p>
+                    <h3>Cena paliwa</h3>
+                        <p><input type="number" placeholder="5.19" id="fuelPriceInput"><label class="unit">PLN</label></p>
+                    <div class="fuelPrices">
+                        <button class="fuelButton" style="background-color: #55A309;">95 <label class="fuelPrice" id="Pb95">6.38 PLN</label></button>
+                        <button class="fuelButton" style="background-color: #4F900F;">98 <label class="fuelPrice" id="Pb98">6.38 PLN</label></button>
+                        <button class="fuelButton" style="background-color: #00AEEF;">LPG <label class="fuelPrice" id="LPG">6.38 PLN</label></button>
+                        <button class="fuelButton" style="background-color: #353535;">ON <label class="fuelPrice" id="ON">6.38 PLN</label></button>
+                        <button class="fuelButton" style="background-color: #4A4A4A;">ON+ <label class="fuelPrice" id="ON+">6.38 PLN</label></button>
+                    </div>
+            </div>
+
+            <div class="passengers" id="passengers">
+                <h2><span class="material-symbols-rounded" >person</span>Pasażerowie</h2>
+                    <h3>Ilość pasażerów</h3>
+                        <p><input type="number" style="border-radius: 12px;" placeholder="1" id="passengersNumberInput"></p>
+                    <h3>Średnia waga pasażera</h3>
+                        <p><input type="number" placeholder="70"><label class="unit" id="avgWeightInput">Kg</label></p>
+                    <hr>
+                    <span class="passengersCheckbox"><input type="checkbox" id="includePassengersCheckbox" checked>Uwzględnij pasażerów</span>
+            </div>
+
+            <div class="savedCars" id="savedCars">
+                <h2><span class="material-symbols-rounded" >garage_home</span>Zapisane pojazdy</h2>
+                <div class="tmp">
+                    <h2>Funkcja dostępna wkrótce</h2>
+                    <span class="material-symbols-rounded" >home_repair_service</span>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="result">
+                <div class="top">
+                    <h2><span class="material-symbols-rounded" >receipt_long</span>Podsumowanie</h2>
+                    <div class="summaryData">
+                        <span class="material-symbols-rounded mode_heat" >mode_heat</span>
+                        <h3>Spalanie <p id="consumptionDisplay">0,00 <label class="summaryUnit">L/100km</label></p></h3>
+                    </div>
+                    <div class="summaryData">
+                        <span class="material-symbols-rounded conversion_path" >conversion_path</span>
+                        <h3>Dystans <p id="distanceDisplay">0,00 <label class="summaryUnit">Km</label></p></h3>
+
+                    </div>
+                    <div class="summaryData">
+                        <span class="material-symbols-rounded sell" >sell</span>
+                        <h3>Cena paliwa <p id="priceDisplay">0,00 <label class="summaryUnit">PLN</label></p></h3>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <hr>
+                    <h3><span style="display: flex; align-items: center; gap: 5px;"><span class="material-symbols-rounded local_gas_station" >local_gas_station</span>Potrzebne paliwo</span> <p id="fuelUsed">0,00 <label class="summaryUnit">L</label></p></h3>
+                    <h2><span style="display: flex; align-items: center; gap: 5px;"><span class="material-symbols-rounded payments" >payments</span>Całkowity koszt</span> <p id="totalCost">0,00 <label class="summaryUnit">PLN</label></p></h2>
+                    <button onclick="calculate()">OBLICZ</button>
+                </div>
+            </div>
+        </div>
+    </main>
+<!-- <div id="cenyPaliw">Ładuję ceny paliw...</div> -->
+
+</body>
+</html>

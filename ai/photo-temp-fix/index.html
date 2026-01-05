@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korekta Temperatury Zdjęć</title>
+    <meta
+      name="description"
+      content="Napraw za ciepłe lub za zimne zdjęcia bez utraty jakości"
+    />
+    <script>
+      // Dynamic CSS loading with random version for cache busting
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "index.css?v=" + Math.random();
+      document.head.appendChild(link);
+    </script>
+    <noscript><link rel="stylesheet" href="index.css" /></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <span class="material-symbols-rounded logo-icon">photo_camera</span>
+          <span class="logo-text">Photo Tuner</span>
+        </div>
+        <!-- Theme Toggle -->
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Przełącz motyw"
+        >
+          <span class="material-symbols-rounded" id="themeIcon">dark_mode</span>
+        </button>
+      </header>
+
+      <main class="main-content">
+        <!-- Drop Zone -->
+        <section class="drop-zone-section">
+          <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-icon">
+              <span class="material-symbols-rounded">add_photo_alternate</span>
+            </div>
+            <h2>Upuść zdjęcia tutaj</h2>
+            <p>lub kliknij aby wybrać pliki</p>
+            <button class="browse-btn" id="browseBtn">
+              <span class="material-symbols-rounded">folder_open</span>
+              Przeglądaj pliki
+            </button>
+            <p class="file-types">
+              JPG, PNG, WEBP • do 1000 zdjęć • zachowuje metadane EXIF
+            </p>
+            <p class="processing-warning">
+              <span class="material-symbols-rounded">info</span>
+              Im więcej zdjęć dodasz, tym dłużej potrwa ich wgrywanie.
+            </p>
+            <input
+              type="file"
+              id="fileInput"
+              multiple
+              accept="image/jpeg,image/png,image/webp"
+              hidden
+            />
+          </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar" id="uploadStats" hidden>
+          <div class="stats-left">
+            <span class="photo-count-badge" id="photoCount">0</span>
+            <span class="stats-text">zdjęć wybranych</span>
+            <span class="stats-status">• Gotowe do korekty</span>
+          </div>
+          <button class="remove-all-btn" id="clearPhotos">
+            <span class="material-symbols-rounded">delete</span>
+            Usuń wszystkie
+          </button>
+        </div>
+
+        <!-- Control Panel -->
+        <section class="control-panel" id="controlPanel" hidden>
+          <div class="controls-row">
+            <!-- Temperature Slider -->
+            <div class="control-card temperature-card">
+              <div class="card-header">
+                <span class="material-symbols-rounded">wb_sunny</span>
+                <span class="card-title">Temperatura</span>
+                <span class="temp-value" id="temperatureValue">-40</span>
+              </div>
+              <div class="slider-wrapper">
+                <input
+                  type="range"
+                  id="temperatureSlider"
+                  min="-100"
+                  max="100"
+                  value="-40"
+                  class="temp-slider"
+                />
+                <div class="slider-labels">
+                  <span>ZIMNE</span>
+                  <span>NEUTRALNE</span>
+                  <span>CIEPŁE</span>
+                </div>
+              </div>
+              <!-- Quick Presets - Extended with warm options -->
+              <div class="presets-container">
+                <div class="presets-row">
+                  <span class="presets-label">Schłódź:</span>
+                  <div class="quick-presets">
+                    <button class="preset-chip active" data-value="-40">
+                      <span class="material-symbols-rounded">ac_unit</span>
+                      Lekko
+                    </button>
+                    <button class="preset-chip" data-value="-65">
+                      <span class="material-symbols-rounded">severe_cold</span>
+                      Mocno
+                    </button>
+                  </div>
+                </div>
+                <div class="presets-row">
+                  <span class="presets-label">Ociep:</span>
+                  <div class="quick-presets">
+                    <button class="preset-chip" data-value="40">
+                      <span class="material-symbols-rounded">wb_sunny</span>
+                      Lekko
+                    </button>
+                    <button class="preset-chip" data-value="65">
+                      <span class="material-symbols-rounded"
+                        >local_fire_department</span
+                      >
+                      Mocno
+                    </button>
+                  </div>
+                </div>
+                <button class="preset-chip preset-chip-reset" data-value="0">
+                  <span class="material-symbols-rounded">restart_alt</span>
+                  Bez zmian
+                </button>
+              </div>
+            </div>
+
+            <!-- Format Selector -->
+            <div class="control-card format-card">
+              <div class="card-header">
+                <span class="material-symbols-rounded">save</span>
+                <span class="card-title">Format zapisu</span>
+              </div>
+              <div class="format-buttons">
+                <label class="format-btn">
+                  <input type="radio" name="format" value="original" checked />
+                  <span>ORYG.</span>
+                </label>
+                <label class="format-btn">
+                  <input type="radio" name="format" value="jpeg" />
+                  <span>JPG</span>
+                </label>
+                <label class="format-btn">
+                  <input type="radio" name="format" value="png" />
+                  <span>PNG</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Preview Comparison -->
+        <section class="preview-section" id="previewSection" hidden>
+          <div class="preview-comparison">
+            <div class="preview-side original-side">
+              <span class="preview-badge">ORYGINAŁ</span>
+              <canvas id="originalCanvas"></canvas>
+            </div>
+            <div class="preview-divider">
+              <span class="material-symbols-rounded">compare_arrows</span>
+            </div>
+            <div class="preview-side corrected-side">
+              <span class="preview-badge preview-badge-accent">PODGLĄD</span>
+              <canvas id="correctedCanvas"></canvas>
+            </div>
+          </div>
+          <div class="preview-nav">
+            <button class="nav-btn" id="prevPhoto" disabled>
+              <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+            <span class="nav-info" id="previewIndex">1 / 1</span>
+            <button class="nav-btn" id="nextPhoto" disabled>
+              <span class="material-symbols-rounded">chevron_right</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Process & Download Section -->
+        <section class="download-section" id="processSection" hidden>
+          <div class="progress-container" id="progressContainer" hidden>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text" id="progressText">Przetwarzanie...</p>
+          </div>
+
+          <!-- Step 1: Process -->
+          <button class="download-btn process-main-btn" id="startProcessBtn">
+            <div class="download-btn-content">
+              <span class="download-text">Przetwórz zdjęcia</span>
+              <span class="download-info" id="processInfo"
+                >Gotowe do startu</span
+              >
+            </div>
+            <span class="material-symbols-rounded">auto_fix_high</span>
+          </button>
+
+          <!-- Step 2: Download Options (Hidden initially) -->
+          <div class="download-options" id="downloadOptions" hidden>
+            <div class="success-message">
+              <span class="material-symbols-rounded">check_circle</span>
+              Przetwarzanie zakończone! Wybierz opcję zapisu:
+            </div>
+
+            <div class="download-buttons">
+              <button class="download-btn secondary-btn" id="downloadZipBtn">
+                <div class="download-btn-content">
+                  <span class="download-text">Pobierz ZIP</span>
+                  <span class="download-info">Wszystkie w jednym pliku</span>
+                </div>
+                <span class="material-symbols-rounded">folder_zip</span>
+              </button>
+
+              <button class="share-btn" id="shareBtn" hidden>
+                <div class="download-btn-content">
+                  <span class="download-text">Zapisz do Zdjęć</span>
+                  <span class="download-info">Bezpośrednio do galerii</span>
+                </div>
+                <span class="material-symbols-rounded">photo_library</span>
+              </button>
+            </div>
+
+            <button class="reset-btn-link" id="resetProcessBtn">
+              Przetwórz ponownie (zmień ustawienia)
+            </button>
+          </div>
+        </section>
+
+        <!-- All Photos Section - Now below download -->
+        <section class="queue-section" id="thumbnailsSection" hidden>
+          <div class="queue-header">
+            <span class="queue-title">Wszystkie zdjęcia</span>
+          </div>
+          <div class="queue-grid" id="thumbnailsGrid"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span class="material-symbols-rounded">lock</span>
+        Wszystko działa lokalnie - zdjęcia nie są wysyłane
+      </footer>
+    </div>
+
+    <script src="lib/jszip.min.js"></script>
+    <script src="lib/piexif.min.js"></script>
+    <script>
+      // Dynamic JS loading with random version for cache busting
+      var script = document.createElement("script");
+      script.src = "index.js?v=" + Math.random();
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>

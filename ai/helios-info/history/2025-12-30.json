@@ -1,0 +1,410 @@
+{
+    "date": "2025-12-30",
+    "dayType": "tuesday",
+    "dayOfWeek": 2,
+    "savedAt": "2025-12-30T22:00:02+01:00",
+    "totals": {
+        "occupied": 1824,
+        "total": 6383,
+        "percent": 28.6,
+        "screenings": 39
+    },
+    "hourly": {
+        "10": {
+            "occupied": 145,
+            "total": 1203,
+            "screenings": 7
+        },
+        "12": {
+            "occupied": 147,
+            "total": 449,
+            "screenings": 3
+        },
+        "13": {
+            "occupied": 203,
+            "total": 764,
+            "screenings": 4
+        },
+        "14": {
+            "occupied": 199,
+            "total": 430,
+            "screenings": 3
+        },
+        "15": {
+            "occupied": 165,
+            "total": 401,
+            "screenings": 3
+        },
+        "17": {
+            "occupied": 270,
+            "total": 805,
+            "screenings": 4
+        },
+        "18": {
+            "occupied": 252,
+            "total": 390,
+            "screenings": 3
+        },
+        "16": {
+            "occupied": 150,
+            "total": 294,
+            "screenings": 2
+        },
+        "19": {
+            "occupied": 75,
+            "total": 297,
+            "screenings": 2
+        },
+        "20": {
+            "occupied": 127,
+            "total": 552,
+            "screenings": 4
+        },
+        "21": {
+            "occupied": 47,
+            "total": 512,
+            "screenings": 2
+        },
+        "11": {
+            "occupied": 44,
+            "total": 286,
+            "screenings": 2
+        }
+    },
+    "movies": [
+        {
+            "title": "Zwierzogród 2",
+            "genres": [
+                "animowany",
+                "komedia",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:10",
+                    "occupied": 33,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "10:40",
+                    "occupied": 39,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "12:10",
+                    "occupied": 92,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "13:10",
+                    "occupied": 70,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "14:50",
+                    "occupied": 101,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "15:45",
+                    "occupied": 100,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "17:30",
+                    "occupied": 141,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "18:15",
+                    "occupied": 103,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                }
+            ],
+            "totalOccupied": 679,
+            "totalSeats": 1282
+        },
+        {
+            "title": "Avatar: Ogień i popiół",
+            "genres": [
+                "akcja",
+                "fantasy",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:00",
+                    "occupied": 22,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "10:40",
+                    "occupied": 22,
+                    "total": 149,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "12:20",
+                    "occupied": 17,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "13:00",
+                    "occupied": 117,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "14:00",
+                    "occupied": 80,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "14:40",
+                    "occupied": 18,
+                    "total": 149,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "16:15",
+                    "occupied": 109,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "17:00",
+                    "occupied": 83,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "18:00",
+                    "occupied": 87,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "18:45",
+                    "occupied": 62,
+                    "total": 149,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "19:30",
+                    "occupied": 40,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "20:15",
+                    "occupied": 87,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "21:00",
+                    "occupied": 43,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                }
+            ],
+            "totalOccupied": 787,
+            "totalSeats": 2507
+        },
+        {
+            "title": "SpongeBob: Klątwa Pirata",
+            "genres": [
+                "animowany",
+                "komedia",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:30",
+                    "occupied": 21,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "12:45",
+                    "occupied": 38,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "15:00",
+                    "occupied": 37,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "17:15",
+                    "occupied": 45,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                }
+            ],
+            "totalOccupied": 141,
+            "totalSeats": 596
+        },
+        {
+            "title": "Uwierz w Mikołaja 2",
+            "genres": [
+                "komedia"
+            ],
+            "screenings": [
+                {
+                    "time": "16:30",
+                    "occupied": 41,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "20:40",
+                    "occupied": 16,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                }
+            ],
+            "totalOccupied": 57,
+            "totalSeats": 286
+        },
+        {
+            "title": "Pięć koszmarnych nocy 2",
+            "genres": [
+                "horror",
+                "thriller"
+            ],
+            "screenings": [
+                {
+                    "time": "20:00",
+                    "occupied": 24,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                }
+            ],
+            "totalOccupied": 24,
+            "totalSeats": 154
+        },
+        {
+            "title": "Mysz-Masz na Święta",
+            "genres": [
+                "familijny",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:00",
+                    "occupied": 2,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "11:30",
+                    "occupied": 41,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                }
+            ],
+            "totalOccupied": 43,
+            "totalSeats": 302
+        },
+        {
+            "title": "Anakonda",
+            "genres": [
+                "akcja",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "11:00",
+                    "occupied": 3,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "15:20",
+                    "occupied": 28,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "19:00",
+                    "occupied": 35,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "21:20",
+                    "occupied": 4,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                }
+            ],
+            "totalOccupied": 70,
+            "totalSeats": 572
+        },
+        {
+            "title": "Rufus. Potwór morski, który nie umiał pływać ",
+            "genres": [
+                "animowany"
+            ],
+            "screenings": [
+                {
+                    "time": "10:20",
+                    "occupied": 6,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "13:20",
+                    "occupied": 12,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                }
+            ],
+            "totalOccupied": 18,
+            "totalSeats": 284
+        },
+        {
+            "title": "Song Sung Blue",
+            "genres": [
+                "dramat",
+                "musical"
+            ],
+            "screenings": [
+                {
+                    "time": "13:30",
+                    "occupied": 4,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "17:45",
+                    "occupied": 1,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "20:50",
+                    "occupied": 0,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                }
+            ],
+            "totalOccupied": 5,
+            "totalSeats": 400
+        }
+    ]
+}

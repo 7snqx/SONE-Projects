@@ -1,0 +1,156 @@
+@import url(/assets/quickCSS/fonts.css);
+
+:root {
+    --fontColor: #ff868a;
+    --fontColor2: #e9e8e8;
+    --textShadow: #fc5e63;
+    --bacgroundColor: #FF454B;
+    --bacgroundColor2: #ff2e35;
+}
+
+* {
+    user-select: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.settings {
+    overflow: hidden;
+    width: 0px;
+    padding: 0px;
+    margin: 9px;
+    font-size: 0px;
+    font-family: mplus;
+    position: absolute;
+    z-index: 2;
+    background-color: aliceblue;
+    border-radius: 10px;
+    transition: all 0.8s;
+    max-width: fit-content;
+    & h1 {
+        text-align: center;
+        margin-top: -50px;
+        
+    }
+    & input {
+        opacity: 0;
+      border-radius: 5px;
+      width: 100px;
+      transition: all 0.5s;
+    }
+}
+
+body {
+    background-color: var(--bacgroundColor);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+
+.material-symbols-rounded {
+        cursor: pointer;
+        font-size: 45px;
+        transition: 0.3s;
+        margin: 5px;
+}
+
+.material-symbols-rounded:active{
+    scale: 0.9;
+    transition: 0.3s;
+}
+
+
+header {
+    z-index: 1;
+    color: var(--fontColor);
+    user-select: none;
+    position: absolute;
+    width: 100%;
+    font-family: mplus;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & h2 {
+        font-size: 2vw;
+        margin-left: 30px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    & .nav {
+        display: flex;
+        padding: 10px;
+       
+    }
+}
+
+#timeLeft {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    font-family: mplus;
+    color: var(--fontColor);
+    font-family: mplus;
+    text-shadow: 3px 2px 0px var(--textShadow);
+    font-size: 2vw;
+    user-select: none;
+    z-index: auto;
+}
+
+.timer {
+ 
+    font-size: 20vw;
+    color: var(--fontColor);
+    font-family: mplus;
+    margin: 60px auto auto auto;
+    text-shadow: 3px 2px 0px var(--textShadow);
+    user-select: none;
+    transition: 0.3s;
+
+}
+
+button {
+    width: fit-content;
+    margin: auto;
+    border: none;
+    font-size: 5vw;
+    font-family: mplus;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: transparent;
+    color: var(--fontColor); 
+    transition: 0.3s;
+    cursor: pointer;
+    
+}
+
+button:active {
+    scale: 0.9;
+    transition: 0.3s;
+}
+button:focus {
+    outline: none;
+}
+
+.start {
+    height: 300px;
+    overflow: hidden;
+    transition: 0.5s;
+    max-height: fit-content;
+}
+
+.pauseButtons {
+    display: flex;
+    margin: auto;
+    gap: 40px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    max-height: fit-content;
+}

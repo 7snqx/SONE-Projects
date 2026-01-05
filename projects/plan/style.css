@@ -1,0 +1,209 @@
+@import url(/assets/quickCSS/fonts.css);
+@import url(/assets/quickCSS/loader.css);
+@import url(/assets/quickCSS/scrollbar.css);
+* {
+    font-family: mplus;
+    user-select: none;
+}
+body {
+    justify-content: center;
+    background: linear-gradient(to right, #D7DDE8, #757F9A); 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+h1 {
+    font-size: 70px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 35px;
+}
+header {
+    margin: auto;
+    width: fit-content;
+}
+main {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.Lesson {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.411);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    width: fit-content;
+    & h3 {
+        font-size: 23px;
+        margin: 0;
+    }
+    & h2 {
+        margin: 0;
+    }
+    .sala {
+        font-size: 18px;
+        color: rgba(105, 90, 243, 0.616);
+    }
+    & p {
+        margin: 0;
+        color: rgba(105, 90, 243, 0.616);
+    }
+    & hr {
+        height: 100px;
+        border: 1px solid rgba(0, 0, 0, 0.158);
+        border-radius: 50%;
+    }
+    & .timeUntil {
+        font-size: 60px;
+        color: black;
+    }
+    & .min {
+        font-size: 20px;
+        margin: 0;
+        
+    }
+    
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.411);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    align-items: center;
+    & th {
+        font-size: 20px;
+        padding: 0px 20px;
+    }
+    & th:first-child {
+        padding: 0px 5px;
+    }
+    & td:first-child { 
+        align-items: center;
+        gap: 10px;
+        display: flex;
+        font-size: 20px;
+       
+    }
+    & td:nth-child(2), td:nth-child(3) {
+        color: rgba(105, 90, 243, 0.616);
+    }
+    & td:nth-child(4) {
+        text-align: right;
+    }
+    & hr {
+        margin: 0;
+        height: 15px;
+        border: 5px solid rgba(105, 90, 243, 0.616);
+        border-radius: 15px;
+    }
+}
+
+.animateTimer {
+    animation: animateTimer 0.5s;
+    scale: 1;
+    
+}
+
+@keyframes animateTimer {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    header {
+        width: 100%;
+        margin: 0;
+    }
+
+    .lessons {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 50px; 
+    }
+    h2 {
+        font-size: 30px;
+    }
+
+    main {
+        margin: auto;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .Lesson {
+        width: fit-content;
+        margin: 10px 0;
+        align-self: center;
+    }
+
+    table {
+        width: auto;
+        margin: auto;
+    }
+
+    table th {
+        font-size: 14px; 
+        padding: 0 5px;
+    }
+
+    table td:first-child {
+        font-size: 14px;
+    }
+    th:nth-child(4) {
+        text-align: right;
+    }
+
+    td:nth-child(4) {
+        text-align: right;
+        font-size: 12px;
+    }
+
+    .Lesson h3 {
+        font-size: 18px; 
+    }
+
+    .Lesson .timeUntil {
+        font-size: 30px;
+    }
+
+    .Lesson .min {
+        font-size: 14px; 
+    }
+    .Lesson .sala {
+        font-size: 12px;
+    }
+}

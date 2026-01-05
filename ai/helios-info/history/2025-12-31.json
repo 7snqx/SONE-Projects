@@ -1,0 +1,456 @@
+{
+    "date": "2025-12-31",
+    "dayType": "workday",
+    "dayOfWeek": 3,
+    "savedAt": "2025-12-31T22:00:02+01:00",
+    "totals": {
+        "occupied": 1440,
+        "total": 6532,
+        "percent": 22,
+        "screenings": 40
+    },
+    "hourly": {
+        "21": {
+            "occupied": 381,
+            "total": 765,
+            "screenings": 4
+        },
+        "17": {
+            "occupied": 118,
+            "total": 815,
+            "screenings": 4
+        },
+        "20": {
+            "occupied": 178,
+            "total": 443,
+            "screenings": 3
+        },
+        "10": {
+            "occupied": 90,
+            "total": 987,
+            "screenings": 7
+        },
+        "11": {
+            "occupied": 29,
+            "total": 502,
+            "screenings": 2
+        },
+        "13": {
+            "occupied": 67,
+            "total": 478,
+            "screenings": 2
+        },
+        "14": {
+            "occupied": 110,
+            "total": 568,
+            "screenings": 4
+        },
+        "15": {
+            "occupied": 80,
+            "total": 411,
+            "screenings": 3
+        },
+        "18": {
+            "occupied": 185,
+            "total": 528,
+            "screenings": 4
+        },
+        "12": {
+            "occupied": 52,
+            "total": 597,
+            "screenings": 4
+        },
+        "16": {
+            "occupied": 99,
+            "total": 284,
+            "screenings": 2
+        },
+        "19": {
+            "occupied": 51,
+            "total": 154,
+            "screenings": 1
+        }
+    },
+    "movies": [
+        {
+            "title": "Zestaw 2 Filmowy Sylwester 25",
+            "genres": [
+                "różne"
+            ],
+            "screenings": [
+                {
+                    "time": "21:30",
+                    "occupied": 112,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "21:30",
+                    "occupied": 98,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "21:30",
+                    "occupied": 79,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                }
+            ],
+            "totalOccupied": 289,
+            "totalSeats": 401
+        },
+        {
+            "title": "André Rieu. Wesołych Świąt! w Helios na Scenie",
+            "genres": [
+                "koncert "
+            ],
+            "screenings": [
+                {
+                    "time": "17:00",
+                    "occupied": 52,
+                    "total": 149,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "20:00",
+                    "occupied": 71,
+                    "total": 149,
+                    "room": "Sala 4 - Przedwiośnie"
+                }
+            ],
+            "totalOccupied": 123,
+            "totalSeats": 298
+        },
+        {
+            "title": "Zwierzogród 2",
+            "genres": [
+                "animowany",
+                "komedia",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:00",
+                    "occupied": 14,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "10:50",
+                    "occupied": 25,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "11:40",
+                    "occupied": 27,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                },
+                {
+                    "time": "13:20",
+                    "occupied": 35,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "14:40",
+                    "occupied": 36,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "15:50",
+                    "occupied": 56,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                },
+                {
+                    "time": "18:30",
+                    "occupied": 96,
+                    "total": 114,
+                    "room": "Sala 2 - Polonia - Dream"
+                }
+            ],
+            "totalOccupied": 289,
+            "totalSeats": 896
+        },
+        {
+            "title": "Zestaw 1 Filmowy Sylwester 25",
+            "genres": [
+                "różne"
+            ],
+            "screenings": [
+                {
+                    "time": "21:45",
+                    "occupied": 92,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                }
+            ],
+            "totalOccupied": 92,
+            "totalSeats": 364
+        },
+        {
+            "title": "Avatar: Ogień i popiół",
+            "genres": [
+                "akcja",
+                "fantasy",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:10",
+                    "occupied": 7,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "10:40",
+                    "occupied": 8,
+                    "total": 149,
+                    "room": "Sala 4 - Przedwiośnie"
+                },
+                {
+                    "time": "12:00",
+                    "occupied": 19,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "13:30",
+                    "occupied": 32,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "14:10",
+                    "occupied": 52,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "16:10",
+                    "occupied": 81,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "17:30",
+                    "occupied": 54,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "18:15",
+                    "occupied": 41,
+                    "total": 127,
+                    "room": "Sala 9 - Capitol - Dream"
+                },
+                {
+                    "time": "19:45",
+                    "occupied": 51,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "20:30",
+                    "occupied": 96,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                }
+            ],
+            "totalOccupied": 441,
+            "totalSeats": 1850
+        },
+        {
+            "title": "The World of Hans Zimmer - A New Dimension w Helios na Scenie",
+            "genres": [
+                "koncert "
+            ],
+            "screenings": [
+                {
+                    "time": "15:00",
+                    "occupied": 14,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "18:00",
+                    "occupied": 32,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                }
+            ],
+            "totalOccupied": 46,
+            "totalSeats": 298
+        },
+        {
+            "title": "Uwierz w Mikołaja 2",
+            "genres": [
+                "komedia"
+            ],
+            "screenings": [
+                {
+                    "time": "16:20",
+                    "occupied": 18,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                }
+            ],
+            "totalOccupied": 18,
+            "totalSeats": 138
+        },
+        {
+            "title": "SpongeBob: Klątwa Pirata",
+            "genres": [
+                "animowany",
+                "komedia",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:30",
+                    "occupied": 12,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "12:45",
+                    "occupied": 16,
+                    "total": 149,
+                    "room": "Sala 8 - Muza "
+                },
+                {
+                    "time": "14:50",
+                    "occupied": 22,
+                    "total": 149,
+                    "room": "Sala 4 - Przedwiośnie"
+                }
+            ],
+            "totalOccupied": 50,
+            "totalSeats": 447
+        },
+        {
+            "title": "Mysz-Masz na Święta",
+            "genres": [
+                "familijny",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "10:40",
+                    "occupied": 9,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                },
+                {
+                    "time": "12:40",
+                    "occupied": 17,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                }
+            ],
+            "totalOccupied": 26,
+            "totalSeats": 308
+        },
+        {
+            "title": "Pięć koszmarnych nocy 2",
+            "genres": [
+                "horror",
+                "thriller"
+            ],
+            "screenings": [
+                {
+                    "time": "17:15",
+                    "occupied": 8,
+                    "total": 154,
+                    "room": "Sala 1 - Wolność"
+                }
+            ],
+            "totalOccupied": 8,
+            "totalSeats": 154
+        },
+        {
+            "title": "Rufus. Potwór morski, który nie umiał pływać ",
+            "genres": [
+                "animowany"
+            ],
+            "screenings": [
+                {
+                    "time": "10:00",
+                    "occupied": 15,
+                    "total": 146,
+                    "room": "Sala 6 - Gdynia"
+                },
+                {
+                    "time": "14:20",
+                    "occupied": 0,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                }
+            ],
+            "totalOccupied": 15,
+            "totalSeats": 284
+        },
+        {
+            "title": "Anakonda",
+            "genres": [
+                "akcja",
+                "przygodowy"
+            ],
+            "screenings": [
+                {
+                    "time": "11:10",
+                    "occupied": 2,
+                    "total": 364,
+                    "room": "Sala 7 - Bałtyk"
+                },
+                {
+                    "time": "15:20",
+                    "occupied": 10,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "18:45",
+                    "occupied": 16,
+                    "total": 138,
+                    "room": "Sala 5 - Wisła"
+                }
+            ],
+            "totalOccupied": 28,
+            "totalSeats": 650
+        },
+        {
+            "title": "Song Sung Blue",
+            "genres": [
+                "dramat",
+                "musical"
+            ],
+            "screenings": [
+                {
+                    "time": "12:30",
+                    "occupied": 0,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "17:45",
+                    "occupied": 4,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                },
+                {
+                    "time": "20:45",
+                    "occupied": 11,
+                    "total": 148,
+                    "room": "Sala 3 - Tatry"
+                }
+            ],
+            "totalOccupied": 15,
+            "totalSeats": 444
+        }
+    ]
+}

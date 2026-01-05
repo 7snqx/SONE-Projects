@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timer</title>
+    <!-- Pliki css ładują się kolejnością, najniższy plik będzie najważniejszy -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/img/pomTimer.png">
+   
+</head>
+<body>
+    <div class="settings" id="settings">
+        <i class="material-symbols-rounded" id="X" onclick="togleSettings()" style="color: #FF454B; transition: rotate 1s; rotate: 100deg;">close</i><h1>USTAWIENIA</h1>
+        <table>
+            <tr>
+                <td><label for="time">Długość nauki:</label></td>
+                <td><input type="number" name="time" id="time" value="2" placeholder="WYMAGANE" onclick="resetValues('reset')" onfocusout="resetValues()"> <label for="time">h</label></td>
+            </tr>
+            <tr>
+                <td><label for="studyTime">Długość sesji:</label></td>
+                <td><input type="number" name="studyTime" id="studyTime" value="45" placeholder="WYMAGANE" onclick="resetValues('reset')" onfocusout="resetValues()"> <label for="studyTime">min</label></td>
+            </tr>
+            <tr>
+                <td><label for="breakTime">Długość przerwy:</label></td>
+                <td><input type="number" name="breakTime" id="breakTime" value="15" placeholder="WYMAGANE" onclick="resetValues('reset')" onfocusout="resetValues()"> <label for="breakTime">min</label></td>
+            </tr>
+        </table>
+        
+    </div>
+    <header>
+        <i class="material-symbols-rounded" onclick="togleSettings('show')">settings</i>
+        <div class="nav">
+          <i class="material-symbols-rounded">psychology_alt</i>
+          <i class="material-symbols-rounded">tune</i>
+        </div>
+    </header>
+    <h2 id="timeLeft">00:00</h2>
+    <h1 class="timer" id="timer">00:00</h1>
+    <button class="start" onclick="startTimer()">START</button>
+    <div class="pauseButtons">
+        <button class="resume" onclick="unPause()">START</button>
+        <button class="reset" onclick="reset(), resetBtns()">RESET</button>
+    </div>
+</body>
+</html>

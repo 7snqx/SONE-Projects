@@ -1,0 +1,229 @@
+@font-face {
+    font-family: Mooli;
+    src: url(assets/font/Mooli-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(/assets/font/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: "PDark";
+  src: url(assets/font/PDARK.TTF);
+}
+
+.mobileInf {
+  display: none;
+}
+
+body {
+    background: rgb(169,237,255);
+    background: linear-gradient(331deg, rgba(169,237,255,1) 0%, rgba(255,255,255,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    
+    & aside {
+        width: 30%;
+        
+    }
+    
+}
+
+header, nav, aside, main {
+    background-color: aliceblue;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin: 5px;
+    border-radius: 15px;
+    font-family: mooli;  
+}
+
+
+
+.hidden {
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+}
+
+.show {
+  opacity: 1;
+  width: 20%;
+  padding: 15px;
+  margin: 5px;
+}
+
+header {
+    height: 100px;
+    position: relative;
+    padding: 10px;
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 30px;
+    font-family: Montserrat;
+    & img {
+        
+        height: 80px;
+    }
+   
+}
+& /*menu button*/ {
+
+   & .menuButton {
+      position: absolute; 
+      left: 2%; 
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      cursor: pointer;
+      
+      
+      & button {
+       rotate: 360deg;
+        cursor: pointer;
+        border-radius: 15px;
+        border: none;
+        list-style: none;
+        background-color: black;
+        width: 50px;
+        height: 10px;
+        transition: rotate 0.8s, margin 1s ease-in;
+       
+      }
+    }
+    
+
+  & .menuButtonAfter {
+  position: absolute; 
+  left: 2%; 
+  display: flex;
+  flex-direction: column;
+  
+  cursor: pointer;
+  & button {
+        
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    list-style: none;
+    background-color: black;
+    width: 50px;
+    height: 10px;
+    transition: rotate 0.8s, gap 0.5s;
+  }
+  & .bt1 {
+  rotate: 45deg;
+  }
+  & .bt2 {
+  rotate: -45deg;
+  margin-top:-9px;
+
+}
+}
+
+}
+
+
+main {
+    text-align: justify;
+
+    & img {
+        object-fit: cover;
+        width: 400px;
+        height: 300px;
+        border-radius: 15px;
+        border: 2px solid rgb(0, 0, 0);
+        margin-left: 40px;
+    }
+    & .top1, .top2, .top3 {
+        display: flex;
+        transition: opacity 0.5s ease-in-out;
+    }
+}
+
+nav { 
+    transition: opacity 0.4s ease-in, width 0.4s ease-in, margin 0.4s ease-in, padding 0.4s ease-in;
+    & p:hover {
+        font-weight: 900;
+        cursor: pointer;
+    }
+}
+
+& /*a*/ {
+    & a {
+      text-decoration: none;
+    }
+  
+    & a:link {
+      color: rgb(37, 140, 209);
+    }
+  
+    & a:visited {
+        color: rgb(37, 140, 209);
+    }
+  
+    & a:hover {
+      color: rgb(7, 64, 97);
+    }
+  
+    & a:active {
+      color: rgb(0, 0, 0);
+    }
+  }
+
+& /*scrollbar*/ {
+    & ::-webkit-scrollbar {
+      width: 5px;
+      height: 10px;
+    }
+  
+    & ::-webkit-scrollbar-track {
+      background-color: #787060;
+    }
+  
+    & ::-webkit-scrollbar-thumb {
+      background-color: #e0d8d8;
+      border-radius: 5px;
+      height: 10px;
+    }
+  
+    & ::-webkit-scrollbar-thumb:hover {
+      background-color: #c2baba;
+    }
+  }
+table {
+  
+  border-radius: 10px;
+  border-spacing: 5px;
+  padding: 5px;
+  transition: all 1s ease-in;
+  &  td {
+    border-left: 1px solid black;
+    padding: 5px;
+    text-align: left;
+    
+  }
+}
+table:hover  {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition: all 1s ease-in;
+}
+
+footer {
+  display: flex;
+  color: hsla(40, 11%, 42%, 0.199);
+  justify-content: center;
+  font-family: Montserrat;
+  margin-top: -50px;
+ 
+}

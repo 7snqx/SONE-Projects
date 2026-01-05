@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Mooli;
+    src: url(assets/font/Mooli-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(/assets/font/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: "PDark";
+  src: url(assets/font/PDARK.TTF);
+}
+
+h1 {
+    font-family: mooli;
+    margin: 0;
+    text-align: center;
+   
+}
+
+.mobileTmp {
+   display: none;
+}
+
+.mobileInf {
+    & img {
+        width: 100%;
+        
+    }
+}

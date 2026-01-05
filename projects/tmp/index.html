@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CSS Gradient na Grafikę HD z Pobieraniem</title>
+<style>
+ body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7f9;
+  color: #333;
+  margin: 2em auto;
+  max-width: 700px;
+  padding: 1em 2em 3em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+h1 {
+  text-align: center;
+  color: #5a2a83;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 1.15px;
+}
+
+label {
+  font-weight: 600;
+  color: #5a2a83;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+textarea {
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  padding: 12px;
+  border: 2px solid #a678d1;
+  border-radius: 8px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #5a2a83;
+  box-shadow: 0 0 5px #7c53c4a8;
+}
+
+button {
+  display: block;
+  background-color: #5a2a83;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgb(90 42 131 / 0.45);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover,
+button:focus {
+  background-color: #7c53c4;
+  box-shadow: 0 6px 15px rgb(124 83 196 / 0.65);
+}
+
+#imgContainer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#imgContainer img {
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(90, 42, 131, 0.3);
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+</head>
+<body>
+  <h1>Konwerter CSS Gradient do Grafiki HD</h1>
+  <form id="gradientForm">
+    <label for="cssGradient">Wklej CSS gradient (pełny kod z background i średnikiem są ok):</label><br />
+    <textarea id="cssGradient" rows="4" placeholder="background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(193, 15, 93, 1) 36%, rgba(112, 42, 140, 1) 100%);"></textarea><br />
+    <button type="submit">Wygeneruj obrazek</button>
+  </form>
+
+  <canvas id="canvas" width="600" height="300" style="display:none;"></canvas>
+  
+  <div id="imgContainer"></div>
+  <button id="downloadBtn" style="display:none;">Pobierz grafikę PNG</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+  const form = document.getElementById('gradientForm');
+  const textarea = document.getElementById('cssGradient');
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  const imgContainer = document.getElementById('imgContainer');
+  const downloadBtn = document.getElementById('downloadBtn');
+
+  function extractGradient(css) {
+    // Usuń ewentualny średnik i whitespace na końcu
+    css = css.trim().replace(/;$/, '');
+    // Jeśli jest prefix background: lub background-image:
+    const regex = /(background(-image)?\s*:\s*)?(.*)/i;
+    let match = css.match(regex);
+    if (match) {
+      let val = match[3].trim();
+      // Usuń jeśli jest "background:" przed gradientem
+      if (val.startsWith('background')) {
+        val = val.replace(/background(-image)?\s*:\s*/, '');
+      }
+      return val;
+    }
+    return css;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let rawCss = textarea.value;
+    let gradientCss = extractGradient(rawCss);
+
+    // Prosta walidacja
+    if (!gradientCss.startsWith('linear-gradient') && !gradientCss.startsWith('radial-gradient')) {
+      alert('Proszę wkleić poprawny CSS gradient zaczynający się od linear-gradient(...) lub radial-gradient(...)');
+      return;
+    }
+
+    // Tworzymy tymczasowy div z gradientem jako tło
+    const tempDiv = document.createElement('div');
+    tempDiv.style.width = canvas.width + 'px';
+    tempDiv.style.height = canvas.height + 'px';
+    tempDiv.style.background = gradientCss;
+    tempDiv.style.position = 'fixed';
+    tempDiv.style.top = '-9999px';
+    tempDiv.style.left = '-9999px';
+
+    document.body.appendChild(tempDiv);
+
+    // Clear previous results
+    imgContainer.innerHTML = '';
+    downloadBtn.style.display = 'none';
+
+    html2canvas(tempDiv).then(tmpCanvas => {
+      // Wyświetlamy wynikowy obraz
+      const imgDataUrl = tmpCanvas.toDataURL('image/png');
+      const img = document.createElement('img');
+      img.src = imgDataUrl;
+      img.alt = 'Gradient image';
+      imgContainer.appendChild(img);
+      downloadBtn.style.display = 'inline-block';
+
+      // Obsługa przycisku pobierania
+      downloadBtn.onclick = () => {
+        const link = document.createElement('a');
+        link.download = 'gradient.png';
+        link.href = imgDataUrl;
+        link.click();
+      };
+
+      // Usuwamy tymczasowy element
+      document.body.removeChild(tempDiv);
+    }).catch(err => {
+      alert('Wystąpił błąd podczas generowania obrazka: ' + err.message);
+      document.body.removeChild(tempDiv);
+    });
+  });
+</script>
+</body>
+</html>

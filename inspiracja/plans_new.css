@@ -1,0 +1,404 @@
+@import url(assets/quickCSS/variables.css);
+@import url(assets/quickCSS/fonts.css);
+
+/* ========================================
+   GLOBAL
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  padding: var(--space-4) var(--space-6);
+  backdrop-filter: blur(30px);
+  border-bottom: var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.btn-secondary {
+  background: var(--glass-bg-strong);
+  color: var(--text-primary);
+  border: var(--border-glass);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.page-header {
+  position: relative;
+  padding: calc(var(--space-20) + 60px) var(--space-6) var(--space-12);
+  text-align: center;
+  overflow: hidden;
+}
+
+.header-gradient {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-3xl);
+  margin-bottom: var(--space-6);
+  background: var(--gradient-primary);
+}
+
+.header-icon .material-symbols-rounded {
+  font-size: 56px;
+  color: white;
+}
+
+.page-title {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-black);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-secondary);
+}
+
+.page-subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--text-muted);
+}
+
+/* ========================================
+   KANBAN BOARD
+   ======================================== */
+.kanban-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-20);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.kanban-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 400px;
+}
+
+.column-header {
+  padding: var(--space-6);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 90px;
+  z-index: var(--z-base);
+}
+
+.column-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.column-title .material-symbols-rounded {
+  font-size: 32px;
+  color: var(--accent-primary);
+}
+
+.column-title h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.column-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--space-3);
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.column-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ========================================
+   PLAN CARDS
+   ======================================== */
+.plan-card {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.plan-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.plan-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.plan-card:hover .plan-image img {
+  transform: scale(1.05);
+}
+
+.plan-status {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+}
+
+.status-progress {
+  background: rgba(251, 191, 36, 0.9);
+  color: var(--text-dark);
+}
+
+.status-done {
+  background: rgba(72, 187, 120, 0.9);
+  color: white;
+}
+
+.plan-status .material-symbols-rounded {
+  font-size: 18px;
+}
+
+.plan-content {
+  padding: var(--space-6);
+}
+
+.plan-content h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+}
+
+.plan-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+}
+
+.plan-footer {
+  padding-top: var(--space-4);
+  border-top: var(--border-subtle);
+}
+
+.plan-date {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.plan-date .material-symbols-rounded {
+  font-size: 20px;
+  color: var(--accent-primary);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--bg-secondary);
+  padding: var(--space-16) var(--space-6);
+  border-top: var(--border-subtle);
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.footer-brand img {
+  width: 120px;
+  margin-bottom: var(--space-4);
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-4);
+}
+
+.footer-links a,
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--space-3);
+  transition: color var(--transition-base);
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--accent-primary);
+}
+
+.footer-links a .material-symbols-rounded,
+.footer-contact a .material-symbols-rounded {
+  font-size: 20px;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: var(--space-8);
+  border-top: var(--border-subtle);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .kanban-container {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .column-header {
+    top: 76px;
+  }
+
+  .header-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .header-icon .material-symbols-rounded {
+    font-size: 48px;
+  }
+
+  .kanban-container {
+    padding: var(--space-6) var(--space-4) var(--space-16);
+  }
+}

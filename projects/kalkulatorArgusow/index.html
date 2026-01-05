@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta property="og:title" content="Kalkulator Argusów">
+    <meta property="og:image" itemprop="image" content="https://soneprojects.com/assets/img/ka.jpg">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://soneprojects.com/projects/kalkulatorArgusow/">
+    <link itemprop="thumbnailUrl" href="https://soneprojects.com/assets/img/ka.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" id="style" media="screen and (min-width: 600px)"/>
+    <link rel="stylesheet" href="styleMobile.css" id="styleMobile" media="screen and (max-width: 600px)"/>
+    <link rel="icon" href="assets/img/arg.png">
+    <script defer src="script.js"></script>
+    <title>Kalkulator Argusów</title>
+</head>
+<body>
+    <header>
+        <h1>KALKULATOR ARGUSÓW</h1>
+    </header>
+    <main>
+        <div class="cena">
+            <p>OBECNA CENA ARGUSA: <input type="number"  value="1.9" placeholder="PLN" id="price"></p>
+            <label>Jeśli cena jest inna niż zazwyczaj proszę zmienić</label>
+        </div>
+        <div class="przelicznik">
+            <p>CENA W ARGUSACH <input type="number" id="arg"  disabled onclick="hideResult()"></p>
+            <p class="arrows" id="arrows" onclick="change()">&#8644;</p>
+            <p>CENA W ZŁOTÓWKACH <input type="number" id="pln" class="selected" onclick="hideResult()"></p>
+        </div>
+        <div style="justify-content: center; display: grid;">
+            <button onclick="calculate()">OBLICZ</button>
+        </div>
+        <div style="justify-content: center; display: flex;">
+            <div class="resultHidden" id="result">
+             
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>
